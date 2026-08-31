@@ -115,8 +115,7 @@ For your masterwork, reconstruct the interaction as a scene:
 - **Setting**. The interaction takes place at night in a dark forest, during the fireflies’ mating season. The environment is mostly dark so that the flashes can be clearly seen.
 - **Players**. A group of male fireflies flying throughout the area, as well as female fireflies resting in flowers.
 - **Activity**. The male fireflies flash their lights repeatedly. Other individual fireflies see the flashes of nearby fireflies and adjust the timing of their own flashes. As more fireflies interact with one another, their flashing eventually becomes coordinated and creates a collective pattern where many fireflies flash together. And during the pauses between the male flashes, female fireflies can respond with their own tiny flashes.
-- **Goals**. The male fireflies are trying to attract and communicate with potential partners with their flashing pattern, while the female fireflies are trying to identify and respond to suitable males. The group synchronized pattern becomes a coordinated courtship show.
-- **Main scenario**: One male firefly flashes its light in a dark forest at night. As he sees the flashes of nearby fireflies, he adjusts the timing of his own flash. Eventually, more fireflies synchronize until the group produces a single and coordinated flashing pattern. A female firefly observes the display and responds.
+- **Goals**. The male fireflies are trying to attract and communicate with potential partners with their flashing pattern, while the female fireflies are trying to identify and respond to suitable males. The group synchronized pattern becomes a coordinated courtship show. 
 
 Now **sketch a 3 storyboards** of the interaction you are recreating. (The number may depend on the thing you drew, but stretch your thinking!) They
 don't need to be beautiful, but they must capture and communicate not only the behavior of the light, but how it affects
@@ -124,11 +123,9 @@ and the people around it. If you're new to storyboarding, read
 [this explanation](https://www.nngroup.com/articles/storyboards-visualize-ideas/).
 
 **Include pictures of your storyboards here.**
+Use the storyboards to decide what interaction to prototype.
 
-<img width="1786" height="2048" alt="Storyboard1" src="https://github.com/user-attachments/assets/de0a67a3-66c4-4f37-bf70-24430ca42b85" />
-
-
-Storyboard 1: Two fireflies interacting until they become synchronized (call and response).
+**Storyboard 1**: Two fireflies interacting until they become synchronized (call and response).
 Frames:
 1. Two fireflies separated
 2. Firefly A flashes
@@ -137,12 +134,33 @@ Frames:
 5. B responds closer in time
 6. They eventually flash together
 
-   
+<img width="1786" height="2048" alt="Storyboard1" src="https://github.com/user-attachments/assets/de0a67a3-66c4-4f37-bf70-24430ca42b85" />
 
 
-Use the storyboards to decide what interaction to prototype.
+**Storyboard 2**: A group of fireflies flashing at different times, until they eventually become synchronized (gradual synchronization).
+Frames:
+1. Four fireflies in a dark forest
+2. Firefly A flashes
+3. Fireflies B and C respond at slightly different times
+4. Their flashes become closer together
+5. Everyone flashes together and continues synchronized flashing
+
+<img width="2030" height="2048" alt="Storyboard2" src="https://github.com/user-attachments/assets/5f0e0675-dc28-43af-9db6-bbb7a67de82b" />
+
+
+**Storyboard 3**: A group of male fireflies flashes together, followed by a female responding with a flash during the dark interval. 
+Frames:
+1. A male firefly is flying above, while a female is sitting on a plant below
+2. Several male fireflies produce their synchronized flash sequence
+3. The males stop flashing (dark interval)
+4. The female produces a small response flash during the dark interval
+5. The males flash again, responding/continuing the courtship sequence
+6. The female responds again during the next dark interval
+
+<img width="1253" height="1600" alt="Storyboard3" src="https://github.com/user-attachments/assets/1ee26cb7-c137-4dd7-a5ac-b0fd23447360" />
 
 **Summarize the feedback you got here.**
+One male firefly flashes its light in a dark forest at night. As he sees the flashes of nearby fireflies, he adjusts the timing of his own flash. Eventually, more fireflies synchronize until the group produces a single and coordinated flashing pattern. A female firefly observes the display and responds.
 
 ## Part B. Act out the Interaction
 
