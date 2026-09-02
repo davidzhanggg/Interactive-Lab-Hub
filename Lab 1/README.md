@@ -253,7 +253,15 @@ guess the masterwork and the goals of the characters, and ask about anything tha
 wasn't clear.
 
 **Who were the other groups you kibitzed with? Add links to their project pages here.**
+
+The three groups we kibitzed with are:
+1. https://github.com/SinaL0123/Interactive-Lab-Hub/tree/Fall2026/Lab%201
+2. https://github.com/JindiChai/Interactive-Lab-Hub/tree/Fall2026/Lab%201
+3. https://github.com/manrongm/Interactive-Lab-Hub/tree/mm3599-lab1a/Lab%201
+
 **Summarize the feedback you got from your partners here.**
+
+Overall, the feedback was positive about our explanation of firefly synchrony and the way our storyboards showed the progression from individual flashing to gradual synchronization and male-female interaction. The main area for improvement was making the final video understandable without requiring viewers to read the storyboards or project description first. Multiple groups suggested making the firefly metaphor more visually recognizable by adding simple decorations to the phones or recreating a darker forest-like environment. We were also encouraged to make the initial differences in flashing rhythms more noticeable and show more rounds of gradual adjustment before reaching synchronization. Other suggestions included adding labels or sound to clarify the interaction and reorganizing parts of the GitHub documentation to make it easier to follow.
 
 ## Remix, Update, or Critique the Master
 
