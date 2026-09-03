@@ -25,18 +25,17 @@ The core interaction of our masterwork would be:
 
 ## Part A. Plan
 
-- **Setting**. The interaction takes place at night in a dark forest, during the fireflies’ mating season. The environment is mostly dark so that the flashes can be clearly seen.
-- **Players**. A group of male fireflies flying throughout the area, as well as female fireflies resting in flowers.
-- **Activity**. The male fireflies flash their lights repeatedly. Other individual fireflies see the flashes of nearby fireflies and adjust the timing of their own flashes. As more fireflies interact with one another, their flashing eventually becomes coordinated and creates a collective pattern where many fireflies flash together. And during the pauses between the male flashes, female fireflies can respond with their own tiny flashes.
-- **Goals**. The male fireflies are trying to attract and communicate with potential partners with their flashing pattern, while the female fireflies are trying to identify and respond to suitable males. The group synchronized pattern becomes a coordinated courtship show. 
+# **Setting**. 
+The interaction takes place at night in a dark forest, during the fireflies’ mating season. The environment is mostly dark so that the flashes can be clearly seen.
 
-Now **sketch a 3 storyboards** of the interaction you are recreating. (The number may depend on the thing you drew, but stretch your thinking!) They
-don't need to be beautiful, but they must capture and communicate not only the behavior of the light, but how it affects
-and the people around it. If you're new to storyboarding, read
-[this explanation](https://www.nngroup.com/articles/storyboards-visualize-ideas/).
+# **Players**. 
+A group of male fireflies flying throughout the area, as well as female fireflies resting in flowers.
 
-**Include pictures of your storyboards here.**
-Use the storyboards to decide what interaction to prototype.
+# **Activity**. 
+The male fireflies flash their lights repeatedly. Other individual fireflies see the flashes of nearby fireflies and adjust the timing of their own flashes. As more fireflies interact with one another, their flashing eventually becomes coordinated and creates a collective pattern where many fireflies flash together. And during the pauses between the male flashes, female fireflies can respond with their own tiny flashes.
+
+# **Goals**. 
+The male fireflies are trying to attract and communicate with potential partners with their flashing pattern, while the female fireflies are trying to identify and respond to suitable males. The group synchronized pattern becomes a coordinated courtship show. 
 
 **Storyboard 1**: Two fireflies interacting until they become synchronized (call and response).
 Frames:
