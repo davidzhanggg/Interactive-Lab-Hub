@@ -25,19 +25,16 @@ The core interaction of our masterwork would be:
 
 ## Part A. Plan
 
-# **Setting**. 
-The interaction takes place at night in a dark forest, during the fireflies’ mating season. The environment is mostly dark so that the flashes can be clearly seen.
+- **Setting**. The interaction takes place at night in a dark forest, during the fireflies’ mating season. The environment is mostly dark so that the flashes can be clearly seen.
 
-# **Players**. 
-A group of male fireflies flying throughout the area, as well as female fireflies resting in flowers.
+- **Players**. A group of male fireflies flying throughout the area, as well as female fireflies resting in flowers. 
 
-# **Activity**. 
-The male fireflies flash their lights repeatedly. Other individual fireflies see the flashes of nearby fireflies and adjust the timing of their own flashes. As more fireflies interact with one another, their flashing eventually becomes coordinated and creates a collective pattern where many fireflies flash together. And during the pauses between the male flashes, female fireflies can respond with their own tiny flashes.
+- **Activity**. The male fireflies flash their lights repeatedly. Other individual fireflies see the flashes of nearby fireflies and adjust the timing of their own flashes. As more fireflies interact with one another, their flashing eventually becomes coordinated and creates a collective pattern where many fireflies flash together. And during the pauses between the male flashes, female fireflies can respond with their own tiny flashes.
 
-# **Goals**. 
-The male fireflies are trying to attract and communicate with potential partners with their flashing pattern, while the female fireflies are trying to identify and respond to suitable males. The group synchronized pattern becomes a coordinated courtship show. 
+- **Goals**. The male fireflies are trying to attract and communicate with potential partners with their flashing pattern, while the female fireflies are trying to identify and respond to suitable males. The group synchronized pattern becomes a coordinated courtship show. 
 
-**Storyboard 1**: Two fireflies interacting until they become synchronized (call and response).
+### **Storyboard 1**: 
+Two fireflies interacting until they become synchronized (call and response).
 Frames:
 1. Two fireflies separated
 2. Firefly A flashes
