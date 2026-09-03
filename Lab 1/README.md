@@ -17,6 +17,7 @@ There is no human involved in this phenomenon, but the main input is the visual 
 This phenomenon is popular for the amazing sight of large groups of fireflies flashing their lights at the time. One of its main strengths from an interaction perspective is that simple interactions between individual fireflies can create a much larger collective behaviour. However, one weakness is that the synchronization depends on several factors like the number of fireflies and their ability to see each other, so the resulting pattern is not always completely predictable.
 
 The core interaction of our masterwork would be:
+
 One firefly sees the flashes of nearby fireflies → adjusts the timing of its own flash → other fireflies do the same → their flashing gradually becomes synchronized
 
 
