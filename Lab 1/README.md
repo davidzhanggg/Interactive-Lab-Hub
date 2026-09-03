@@ -18,7 +18,7 @@ This phenomenon is popular for the amazing sight of large groups of fireflies fl
 
 The core interaction of our masterwork would be:
 
-One firefly sees the flashes of nearby fireflies → adjusts the timing of its own flash → other fireflies do the same → their flashing gradually becomes synchronized
+**One firefly sees the flashes of nearby fireflies → adjusts the timing of its own flash → other fireflies do the same → their flashing gradually becomes synchronized**
 
 
 ## Part A. Plan
