@@ -10,7 +10,8 @@
 
 ## Part 0. Know Your Master
 
-Firefly synchrony is a natural phenomenon in which a group of fireflies flash their lights at the same time, producing a coordinated rhythm. This is a rare phenomenon that happens once a year, during their mating period, when male fireflies produce repeated bursts of yellow flashes as part of their courtship behaviour. Rather than each firefly intentionally trying to synchronize with the whole group, individual fireflies respond to the flashes they can see around them, gradually producing a synchronized pattern across the group.
+Firefly synchrony is a natural phenomenon in which a group of fireflies flash their lights at the same time, producing a coordinated rhythm. Only certain firefly species show synchronous flashing, including *Photinus carolinus* in North America and *Pteroptyx* in Southeast Asia.
+This is a rare phenomenon that happens once a year, during their mating period, when male fireflies produce repeated bursts of yellow flashes as part of their courtship behaviour. Rather than each firefly intentionally trying to synchronize with the whole group, individual fireflies respond to the flashes they can see around them, gradually producing a synchronized pattern across the group.
 
 There is no human involved in this phenomenon, but the main input is the visual flashes from nearby fireflies. So when a firefly notices the flashes of others, it adjusts the timing of its own flashing in response. And as more fireflies interact this way, their individual rhythms gradually become synchronized. The main users are the male fireflies, which produce the synchronized flashes during courtship, as well as female fireflies that respond to these displays. Light therefore acts as a form of communication between the fireflies, particularly for courtship and finding potential mates.
 
@@ -22,17 +23,6 @@ The core interaction of our masterwork would be:
 
 
 ## Part A. Plan
-
-For your masterwork, reconstruct the interaction as a scene:
-
-- **Setting:** Where and when does this interaction happen? (a jungle, a kitchen,
-  a spaceship corridor, a nightclub, a harbor at night)
-- **Players:** Who is involved? Who else is present? Think through everyone in
-  the setting, not just the primary user.
-- **Activity:** What is happening between the players and the light?
-- **Goals:** What is each player trying to do?
-
-**Describe your setting, players, activity, and goals here.**
 
 - **Setting**. The interaction takes place at night in a dark forest, during the fireflies’ mating season. The environment is mostly dark so that the flashes can be clearly seen.
 - **Players**. A group of male fireflies flying throughout the area, as well as female fireflies resting in flowers.
