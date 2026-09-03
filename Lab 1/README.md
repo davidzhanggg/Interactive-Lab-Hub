@@ -33,7 +33,7 @@ The core interaction of our masterwork would be:
 
 **Goals**. The male fireflies are trying to attract and communicate with potential partners with their flashing pattern, while the female fireflies are trying to identify and respond to suitable males. The group synchronized pattern becomes a coordinated courtship show. 
 
-### **Storyboard 1**: 
+### **Storyboard 1: Two-Firefly Synchronization**
 Two fireflies interacting until they become synchronized (call and response).
 Frames:
 1. Two fireflies separated
