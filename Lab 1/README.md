@@ -46,7 +46,8 @@ Frames:
 <img width="1786" height="2048" alt="Storyboard1" src="https://github.com/user-attachments/assets/de0a67a3-66c4-4f37-bf70-24430ca42b85" />
 
 
-**Storyboard 2**: A group of fireflies flashing at different times, until they eventually become synchronized (gradual synchronization).
+**Storyboard 2: Group Synchronization** 
+A group of fireflies flashing at different times, until they eventually become synchronized (gradual synchronization).
 Frames:
 1. Four fireflies in a dark forest
 2. Firefly A flashes
@@ -57,7 +58,8 @@ Frames:
 <img width="2030" height="2048" alt="Storyboard2" src="https://github.com/user-attachments/assets/5f0e0675-dc28-43af-9db6-bbb7a67de82b" />
 
 
-**Storyboard 3**: A group of male fireflies flashes together, followed by a female responding with a flash during the dark interval. 
+**Storyboard 3: Courtship Process**
+A group of male fireflies flashes together, followed by a female responding with a flash during the dark interval. 
 Frames:
 1. A male firefly is flying above, while a female is sitting on a plant below
 2. Several male fireflies produce their synchronized flash sequence
