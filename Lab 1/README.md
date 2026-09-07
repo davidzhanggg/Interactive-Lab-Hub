@@ -10,13 +10,15 @@
 
 ## Part 0. Know Your Master
 
-Firefly synchrony is a natural phenomenon in which a group of fireflies flash their lights at the same time, producing a coordinated rhythm. Only certain firefly species show synchronous flashing, including *Photinus carolinus* in North America and *Pteroptyx* in Southeast Asia.
+Firefly synchrony is a natural phenomenon in which a group of fireflies flash their lights at the same time, producing a coordinated rhythm. Only certain firefly species show synchronous flashing, including *Photinus carolinus* in North America and several species of *Pteroptyx* in Southeast Asia.
 
-This rare phenomenon occurs once a year during their mating period, when male fireflies produce repeated bursts of yellow flashes as part of their courtship behaviour. Rather than each firefly intentionally trying to synchronize with the whole group, individual fireflies respond to the flashes they can see around them, gradually producing a synchronized pattern across the group.
+We decided to focus on just the *Photinus carolinus* species, the "synchronous firefly" of the Great Smoky Mountains National Park. We chose this species because it is one of the most studied examples of firefly synchrony, with several studies looking at its flashing timing and synchronization behaviour (Copeland & Moiseff, 1994; Moiseff & Copeland, 1994; Sarfati et al., 2021). This allowed us to build our storyboards on real observed behaviour rather than making assumptions about how fireflies interact.
 
-There is no human involved in this phenomenon, but the main input is the visual flashes from nearby fireflies. So when a firefly notices the flashes of others, it adjusts the timing of its own flashing in response. And as more fireflies interact in this way, their individual rhythms can gradually become synchronized. The main users are the male fireflies, which produce the synchronized flashes during courtship, as well as female fireflies that respond to these displays during the males' dark interval. Light therefore acts as a form of communication between the fireflies, particularly for courtship and finding potential mates.
+During their annual mating period, male Photinus carolinus produce repeated bursts of 4–8 yellow-green flashes, followed by around 6–9 seconds of darkness. Individual fireflies respond to the flashes they see around them and adjust the timing of their next burst. Through these small adjustments, the group can gradually synchronize without any single firefly leading the others (Moiseff & Copeland, 1994).
 
-This phenomenon is popular for the amazing sight of large groups of fireflies flashing their lights together. One of its main strengths from an interaction perspective is that simple interactions between individual fireflies can create a much larger collective behaviour. However, synchronization only happens under certain conditions. There needs to be a high enough density of fireflies, as individuals need to be able to see each other's flashes, and their natural flashing rhythms need to be able to adjust in response to nearby fireflies. Because of these conditions, synchronization does not always occur and the resulting pattern is not completely predictable.
+There is no human involved in this phenomenon, but from an interaction perspective, the main input is the visual flashes from nearby fireflies. So when a firefly notices the flashes of others, it adjusts the timing of its own flashing in response. And as more fireflies interact in this way, their individual rhythms can gradually become synchronized. The main users are the male fireflies, which produce the synchronized flashes during courtship, as well as female fireflies that respond to these displays during the males' dark interval. Light therefore acts as a form of communication between the fireflies, particularly for courtship and finding potential mates.
+
+This phenomenon is popular for the amazing sight of large groups of fireflies flashing their lights together. One of its main strengths from an interaction perspective is that simple interactions between individual fireflies can create a much larger collective behaviour. However, synchronization only happens under certain conditions. There needs to be enough fireflies and individuals need to be able to see each other's flashes. Their natural flashing rhythms also need to be able to adjust in response to nearby fireflies. Because of these conditions, synchronization does not always occur and the resulting pattern is not completely predictable.
 
 The core interaction of our masterwork would be:
 
@@ -25,7 +27,7 @@ The core interaction of our masterwork would be:
 
 ## Part A. Plan
 
-**Setting**. The interaction takes place at night in a dark forest, during the fireflies’ mating season. The environment is mostly dark so that the flashes can be clearly seen.
+**Setting**. The interaction takes place at night in a dark forest, during the fireflies’ mating season. The environment is mostly dark so that the flashes can be clearly seen. This mirrors the real event in the Great Smoky Mountains National Park.
 
 **Players**. A group of male fireflies flying throughout the area, as well as female fireflies resting on the ground or on low vegetation. A person observes the phenomenon from the distance.
 
@@ -71,26 +73,23 @@ Frames:
 <img width="1253" height="1600" alt="Storyboard3" src="https://github.com/user-attachments/assets/1ee26cb7-c137-4dd7-a5ac-b0fd23447360" />
 
 **Summarize the feedback you got here.**
-One male firefly flashes its light in a dark forest at night. As he sees the flashes of nearby fireflies, he adjusts the timing of his own flash. Eventually, more fireflies synchronize until the group produces a single and coordinated flashing pattern. A female firefly observes the display and responds.
+The main feedback we got was that our first two storyboards felt too similar, since both showed fireflies starting with different flashing rhythms and eventually becoming synchronized. We realized that the three storyboards should explore different aspects of the interaction rather than repeat the same synchronization process at different scales. We therefore changed the first storyboard to focus on how a person experiences the phenomenon, showing an observer entering the forest and gradually noticing the fireflies synchronize around them. We kept the second storyboard focused on how synchronization emerges within a group of fireflies, while the third explores the courtship interaction between synchronized males and a responding female. This gave us three different perspectives on the masterwork: the human experience, the synchronization process, and its role in courtship.
 
 ## Part B. Act out the Interaction
 
-Physically act out the interaction you planned. For now, just pretend the light
-is doing what you've scripted — a person can wave a flashlight, or you can narrate
-it aloud.
+We decided to act out our first storyboard using our phones to simulate the fireflies flashing and synchronization. However, it was more difficult than we expected with only two people, especially since one of us also had to record the interaction. While one person was recording, the other had to control the lights of both phones at the same time. Without a mouse, coordinating the timing of both lights was quite difficult.
 
 **Are there things that seemed better on paper than when acted out?**
 
-Some interactions were easier to understand in the storyboards than in real life. For example, the gradual synchronization of the flashes was difficult to understand with just two people acting out as fireflies.
+Some interactions were easier to understand in the storyboards than in real life. For example, the gradual synchronization of the flashes was much easier to communicate in the storyboard than when we acted it out. With only two phones, it was difficult to show the idea of multiple fireflies gradually adjusting their rhythms until the whole group becomes synchronized. We also realized that if the lights synchronize too quickly, it looks more like two lights flashing together than fireflies gradually influencing each other's timing.
 
 **Did new ideas about the piece surface once you were on your feet?**
 
-Acting out the interactions made us realize that the pauses between flashes are just as important as the flashes themselves. We also noticed that the interaction feels more natural when the fireflies do not synchronize immediately, but gradually adjust their timing.
+Acting out the interaction made us realize that the pauses between flashes are just as important as the flashes themselves. We also noticed that the interaction feels more natural when the fireflies do not synchronize immediately, but gradually adjust their timing. Also, we acted our first attempt in a dark room at Tata. Although the lights could be clearly seen in that room, the place did not really communicate the forest environment of the original phenomenon. So this made us think about adding more context scene, such as a darker outdoor or forest-like setting.
 
 **Are there key moments in the interaction where things could go in a different direction?**
-Iterate your storyboards to capture key non-sequential aspects of the interaction. 
 
-There are also some moments in the interaction where things could go in a different direction. For example, a firefly might not see another firefly’s flash and hence not respond. Or a group that is synchronizing can also be out of sync before adjusting again. These possibilities helped us think of the interaction as something dynamic rather than a fixed sequence 
+There are also some moments in the interaction where things could go in a different direction. For example, a firefly might not see another firefly’s flash and hence not respond nor adjust its timing. A group that is starting to synchronize could also be out of sync temporarilly before adjusting again. In the courtship interaction, a female might respond during the dark interval or might not respond at all. These possibilities helped us think of the interaction as something dynamic rather than a fixed sequence that always happens in the same way. 
 
 
 ## Part C. Prototype the Light (light first!)
