@@ -112,33 +112,29 @@ To improve this, we modified the Tinkerbelle code so that the flashing patterns 
 
 ## Part E. (optional) Costume the Device
 
-Only now should you worry about what the device looks like. Costume your phone so it reads
-as the object from your masterwork — HAL's eye, a Simon shell, a paper-lantern
-Tinker Bell, an Ambient Orb, a lighthouse, a jack-o'-lantern, whatever you drew.
-
-Think about the world your device lives in: could that environment overheat it?
-Is water a danger? Does it need to be loud and bright for an emergency, or quiet
-and calm for a bedroom?
-
-**Include sketches/photos of what your device might look like here.**
+For our final prototype, we drew two large fireflies on paper, each big enough to cover a mobile phone. We placed a phone underneath each paper firefly so that the phone's light appears to come from the firefly itself. When recording the interaction outside in a dark environment, this makes the flashing lights look more like fireflies rather than simply two phone screens turning on and off.
 
 **What concerns or opportunities shaped the way you designed its look?**
+One of our main concerns was making the interaction recognizable. In our first prototype, we only used the phones to represent the fireflies, which made the synchronization visible but did not really communicate the forest or firefly setting. Using paper fireflies helps hide the phones and makes it clearer what each light represents.
+
+We also wanted to keep the costume simple so that it would not interfere with the phone's light. The paper design allows the light to remain visible while giving the device the appearance of a firefly. Recording outside in a darker environment also gives us the opportunity to recreate the natural setting more closely and make the flashes stand out.
+
+![Firefly costume](./Costume1.jpeg)
+![Firefly costume 2](./Costume2.jpeg)
+
 
 ## Part F. Record
 
-**Record your prototyped interaction as a video sketch.** Aim for the bar from
-the top of this lab: a viewer who knows the piece should recognize it; a viewer
-who doesn't should come away understanding what it's famous for. How might you illustrate the non-sequential aspects of the interaction in the sketch?
+Our initial first video was this: https://youtu.be/zMLIxJrEEs8
 
-**Include your video here.**
+But after all the classmates feedback, we improved it and here are the results:
 
-https://youtu.be/zMLIxJrEEs8
 
 **Please indicate who you collaborated with on this lab.** Be generous in
 acknowledging their contributions, and credit any other influences (YouTube,
 Github, Twitter, a friend who lent you a lamp) that informed your recreation.
 
-Xiaowei David and Simin collaborated on researching the topic and discussing the design of the storyboards and how to film the final video. David was mainly responsible for writing and organizing the GitHub content, as well as modifying the Tinkerbelle tool to recreate the firefly synchronization behaviour. Simin was mainly responsible for drawing the storyboards and planning the overall setup for the video. Both team members contributed to the development of the interaction and the final video.
+Xiaowei David and Simin collaborated on researching the topic and discussing the design of the storyboards and how to film the final video. David was mainly responsible for writing and organizing the GitHub content, as well as modifying the Tinkerbelle tool to recreate the firefly synchronization behaviour. Simin was mainly responsible for drawing the storyboards and planning the overall setup for the video. Both team members contributed to the development of the interaction and the final video. Thank you Claude Code for helping us polishing and modifying the Tinkerbelle code, and thanks for the useful research papers found by Simone and cited here above.
 
 ---
 
@@ -147,11 +143,6 @@ Xiaowei David and Simin collaborated on researching the topic and discussing the
 *This describes the second week's work for this lab activity.*
 
 ## Prep (before the next lab)
-
-Find three other groups. (How? Maybe Slack?) Visit their Lab Hub pages, watch their
-videos, and give them reactions and feedback: tell them what you saw happening,
-guess the masterwork and the goals of the characters, and ask about anything that
-wasn't clear.
 
 **Who were the other groups you kibitzed with? Add links to their project pages here.**
 
@@ -185,7 +176,11 @@ your response engages with what your master was really doing.
 **Document everything here — especially the storyboard and video. Photos of the
 prototype are great too.**
 
-INITIAL STORYBOARDS:
+
+Our initial storyboards were like this:
+![Storyboard1](./Storyboard1.jpeg)
+![Storyboard2](./Storyboard2.jpeg)
+![Storyboard3](./Storyboard3.jpeg)
 
 ---
 
