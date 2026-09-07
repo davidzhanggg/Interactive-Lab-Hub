@@ -35,40 +35,40 @@ The core interaction of our masterwork would be:
 
 **Goals**. The male fireflies are trying to attract and communicate with potential partners with their flashing pattern, while the female fireflies are trying to identify and respond to suitable males. The group synchronized pattern becomes a coordinated courtship show. 
 
-### **Storyboard 1: Two-Firefly Synchronization**
-Two fireflies interacting until they become synchronized (call and response).
+### **Storyboard 1: Human Experience**
+**What does synchrony look/feel like to an observer?** A person finds a synchronized firefly display in a dark forest and experiences the contrast between the collective flashes and periods of darkness.
 Frames:
-1. Two fireflies separated
-2. Firefly A flashes
-3. Firefly B sees it and responds
-4. A flashes again
-5. B responds closer in time
-6. They eventually flash together
+1. A person walks into a dark forest at night.
+2. The forest is almost completely dark, with the person looking around.
+3. Suddenly, many fireflies flash together around the person.
+4. The fireflies stop flashing and the forest becomes dark again.
+5. Another synchronized burst lights up the surroundings.
+6. The person stops and watches the repeating pattern in surprise.
 
 <img width="1786" height="2048" alt="Storyboard1" src="https://github.com/user-attachments/assets/de0a67a3-66c4-4f37-bf70-24430ca42b85" />
 
 
 ### **Storyboard 2: Group Synchronization** 
-A group of fireflies flashing at different times, until they eventually become synchronized (gradual synchronization).
+**How does synchrony emerge?** A group of fireflies flashing at different times, until they eventually become synchronized (gradual synchronization).
 Frames:
-1. Four fireflies in a dark forest
-2. Firefly A flashes
-3. Fireflies B and C respond at slightly different times
-4. Their flashes become closer together
-5. Everyone flashes together and continues synchronized flashing
+1. Four fireflies in a dark forest.
+2. Firefly A flashes.
+3. Fireflies B and C respond at slightly different times.
+4. Their flashes become closer together.
+5. Everyone flashes together and continues synchronized flashing.
 
 <img width="2030" height="2048" alt="Storyboard2" src="https://github.com/user-attachments/assets/5f0e0675-dc28-43af-9db6-bbb7a67de82b" />
 
 
-### **Storyboard 3: Courtship Process**
-A group of male fireflies flashes together, followed by a female responding with a flash during the dark interval. 
+### **Storyboard 3: Courtship**
+**Why are they communicating with light?** A group of male fireflies flashes together, followed by a female responding with a flash during the dark interval. 
 Frames:
-1. A male firefly is flying above, while a female is sitting on a plant below
-2. Several male fireflies produce their synchronized flash sequence
-3. The males stop flashing (dark interval)
-4. The female produces a small response flash during the dark interval
-5. The males flash again, responding/continuing the courtship sequence
-6. The female responds again during the next dark interval
+1. A male firefly is flying above, while a female is sitting on a plant below.
+2. Several male fireflies produce their synchronized flash sequence.
+3. The males stop flashing (dark interval).
+4. The female produces a small response flash during the dark interval.
+5. The males flash again, responding/continuing the courtship sequence.
+6. The female responds again during the next dark interval.
 
 <img width="1253" height="1600" alt="Storyboard3" src="https://github.com/user-attachments/assets/1ee26cb7-c137-4dd7-a5ac-b0fd23447360" />
 
@@ -89,7 +89,7 @@ Acting out the interaction made us realize that the pauses between flashes are j
 
 **Are there key moments in the interaction where things could go in a different direction?**
 
-There are also some moments in the interaction where things could go in a different direction. For example, a firefly might not see another firefly’s flash and hence not respond nor adjust its timing. A group that is starting to synchronize could also be out of sync temporarilly before adjusting again. In the courtship interaction, a female might respond during the dark interval or might not respond at all. These possibilities helped us think of the interaction as something dynamic rather than a fixed sequence that always happens in the same way. 
+There are also some moments in the interaction where things could go in a different direction. For example, a firefly might not see another firefly’s flash and hence not respond nor adjust its timing. A group that is starting to synchronize could also be out of sync temporarily before adjusting again. In the courtship interaction, a female might respond during the dark interval or might not respond at all. These possibilities helped us think of the interaction as something dynamic rather than a fixed sequence that always happens in the same way. 
 
 
 ## Part C. Prototype the Light (light first!)
