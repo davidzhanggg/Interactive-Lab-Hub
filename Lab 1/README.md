@@ -12,7 +12,7 @@
 
 Firefly synchrony is a natural phenomenon in which a group of fireflies flash their lights at the same time, producing a coordinated rhythm. Only certain firefly species show synchronous flashing, including *Photinus carolinus* in North America and several species of *Pteroptyx* in Southeast Asia.
 
-We decided to focus on just the *Photinus carolinus* species, the "synchronous firefly" of the Great Smoky Mountains National Park. We chose this species because it is one of the most studied examples of firefly synchrony, with several studies looking at its flashing timing and synchronization behaviour (Copeland & Moiseff, 1994; Moiseff & Copeland, 1994; Sarfati et al., 2021). This allowed us to build our storyboards on real observed behaviour rather than making assumptions about how fireflies interact.
+We decided to focus on just the *Photinus carolinus* species, the "synchronous firefly" of the Great Smoky Mountains National Park. We chose this species because it is one of the most studied examples of firefly synchrony, with several studies looking at its flashing timing and synchronization behaviour ([Copeland & Moiseff, 1994](https://www.science.org/doi/10.1126/science.1190421); [Sarfati et al., 2021](https://www.science.org/doi/10.1126/sciadv.abg9259)). This allowed us to build our storyboards on real observed behaviour rather than making assumptions about how fireflies interact.
 
 During their annual mating period, male Photinus carolinus produce repeated bursts of 4–8 yellow-green flashes, followed by around 6–9 seconds of darkness. Individual fireflies respond to the flashes they see around them and adjust the timing of their next burst. Through these small adjustments, the group can gradually synchronize without any single firefly leading the others (Moiseff & Copeland, 1994).
 
@@ -94,30 +94,21 @@ There are also some moments in the interaction where things could go in a differ
 
 ## Part C. Prototype the Light (light first!)
 
-Use your smartphone as the light of your device. Open the browser on your phone
-to act as the "light," and use the remote control interface on your computer to
-change that light. Code and setup instructions for the *Tinkerbelle* tool are
-[here](https://github.com/IRL-CT/tinkerbelle) (we invented this tool for
-this lab). If you hit technical trouble, a manually or remotely controlled light
-switch, dimmer, or lamp is a fine substitute.
+We modified the original Tinkerbelle code to recreate the flashing and synchronization behaviour of fireflies. In the original version, we could control the color of all connected phones from the laptop, but for our prototype, we changed it so that each phone represents an individual firefly and controls its own flashing rhythm.
 
-**Get the light interaction working before anything else.** Your grade this week
-rides on the *light* being recognizable — the color, the rhythm, the timing, the
-way it answers a person. Only once your light interaction genuinely reads as your
-masterwork should you consider layering in a second modality (sound, vibration,
-motion). If in doubt, keep polishing the light. The other modalities are next
-week's business.
+Each male firefly starts with a different flashing rhythm. When one phone flashes, it sends a signal through the Tinkerbelle server to the other phones. The other fireflies use this signal to slightly adjust the timing of their next flash. After several rounds, their rhythms gradually become closer until they eventually flash together. This allows the synchronization to emerge from the interaction between the phones rather than being directly controlled by one person.
+
+We also changed the appearance of the light to better represent fireflies. The phones flash yellow-green against a dark background, with each flash quickly becoming bright and then gradually fading. We added a separate female firefly mode that waits for the males' flashes and responds during the dark interval with a smaller amber flash.
+
+The control panel still allows us to manually trigger flashes by clicking on the screen, but the synchronization itself runs automatically between the phones.
+
 
 ## Part D. Wizard the Device
 
-Set up a "wizard" arrangement so one person can secretly drive the light while
-another acts with it — this is how you make the device feel alive without
-building any real electronics. (Zoom works well for recording; you can pin the
-video feed of whichever scene you want to capture.)
+For our first attempt, acted as both male fireflies while the wizard stayed outside the camera and controlled their flashing patterns through the Tinkerbelle server. However, manually controlling and coordinating the timing of both phones while also recording the interaction was quite difficult with only two people. An early attempt of our wizarded set-up can be seen here: https://youtu.be/rLAiWG1jecU.
 
-**Include your first attempts at recording the wizarded set-up here.**
+To improve this, we modified the Tinkerbelle code so that the flashing patterns of both phones run automatically and no longer require the wizard to manually trigger each flash. needs to look at it or click anything, everything works automatically. The server runs in the background while the phones gradually adjust their flashing rhythms until they synchronize. This gave us a cleaner and more consistent result that better represents firefly synchrony. The improved set up can be seen here:
 
-https://youtu.be/rLAiWG1jecU
 
 ## Part E. (optional) Costume the Device
 
@@ -147,9 +138,7 @@ https://youtu.be/zMLIxJrEEs8
 acknowledging their contributions, and credit any other influences (YouTube,
 Github, Twitter, a friend who lent you a lamp) that informed your recreation.
 
-Xiaowei David and Simin collaborated together to draw the storyboards and discuss about the overall report structure
-
-Thank you Simin and David for working together for this lab project.
+Xiaowei David and Simin collaborated on researching the topic and discussing the design of the storyboards and how to film the final video. David was mainly responsible for writing and organizing the GitHub content, as well as modifying the Tinkerbelle tool to recreate the firefly synchronization behaviour. Simin was mainly responsible for drawing the storyboards and planning the overall setup for the video. Both team members contributed to the development of the interaction and the final video.
 
 ---
 
@@ -195,6 +184,8 @@ your response engages with what your master was really doing.
 
 **Document everything here — especially the storyboard and video. Photos of the
 prototype are great too.**
+
+INITIAL STORYBOARDS:
 
 ---
 
