@@ -108,7 +108,7 @@ https://youtu.be/_R3bFsO5vQc
 
 For our first attempt, acted as both male fireflies while the wizard stayed outside the camera and controlled their flashing patterns through the Tinkerbelle server. However, manually controlling and coordinating the timing of both phones while also recording the interaction was quite difficult with only two people. An early attempt of our wizarded set-up can be seen here: https://youtu.be/rLAiWG1jecU.
 
-To improve this, we modified the Tinkerbelle code so that the flashing patterns of both phones run automatically and no longer require the wizard to manually trigger each flash. needs to look at it or click anything, everything works automatically. The server runs in the background while the phones gradually adjust their flashing rhythms until they synchronize. This gave us a cleaner and more consistent result that better represents firefly synchrony. The improved set up can be seen here:
+To improve this, we modified the Tinkerbelle code so that the flashing patterns of both phones run automatically and no longer require the wizard to manually trigger each flash. needs to look at it or click anything, everything works automatically. The server runs in the background while the phones gradually adjust their flashing rhythms until they synchronize. This gave us a cleaner and more consistent result that better represents firefly synchrony. The improved set up can be seen here: https://youtu.be/F6sdEFKfpBg
 
 
 ## Part E. (optional) Costume the Device
@@ -130,14 +130,10 @@ We also wanted to keep the costume simple so that it would not interfere with th
 
 Our initial first video was this: https://youtu.be/zMLIxJrEEs8
 
-But after all the classmates feedback, we improved it and here are the results:
+But after all the classmates feedback, we improved it and here are the results: https://youtu.be/F6sdEFKfpBg
 
-
-**Please indicate who you collaborated with on this lab.** Be generous in
-acknowledging their contributions, and credit any other influences (YouTube,
-Github, Twitter, a friend who lent you a lamp) that informed your recreation.
-
-Xiaowei David and Simin collaborated on researching the topic and discussing the design of the storyboards and how to film the final video. David was mainly responsible for writing and organizing the GitHub content, as well as modifying the Tinkerbelle tool to recreate the firefly synchronization behaviour. Simin was mainly responsible for drawing the storyboards and planning the overall setup for the video. Both team members contributed to the development of the interaction and the final video. Thank you Claude Code for helping us polishing and modifying the Tinkerbelle code, and thanks for the useful research papers found by Simone and cited here above.
+**Contributions**: 
+Xiaowei David and Simin collaborated on researching the topic and discussing the design of the storyboards and how to film the final video. David was mainly responsible for writing and organizing the GitHub content, as well as modifying the Tinkerbelle tool to recreate the firefly synchronization behaviour. Simin was mainly responsible for drawing the storyboards and planning the overall setup for the video. Both team members contributed to the development of the interaction and the final video. Thank you Claude Code for helping us polishing and modifying the Tinkerbelle code, and thanks for the useful research papers found by Simone and cited here above. Also, thank you classmates for all your helpful feedback!
 
 ---
 
@@ -160,25 +156,7 @@ Overall, the feedback was positive about our explanation of firefly synchrony an
 
 ## Remix, Update, or Critique the Master
 
-Now that you understand your masterwork from the inside, respond to it. Do the
-recreation again, but this time make it your own — pick one of these moves (or
-combine them):
-
-1. **Remix the modality.** Your recreation no longer has to (just) use light. Use
-   vibration, sound, motion, heat — whatever best carries the interaction. Feel
-   free to fork and modify the Tinkerbelle code. (Add your updates to this lab's folder!)
-2. **Update it.** Redesign the piece for today's context, or for a setting its
-   creators never imagined (the piece with roommates in the room, with children
-   present, on a phone, in a car).
-3. **Fix its weaknesses.** You identified this master's strengths and weaknesses
-   in Part 0 — now address a weakness, or push a strength further.
-
-We will grade this second pass with an emphasis on **creativity** and on how well
-your response engages with what your master was really doing.
-
-**Document everything here — especially the storyboard and video. Photos of the
-prototype are great too.**
-
+We remixed the modality by adding both light and sound to the final video performance. The paper fireflies also helped make the interaction easier for viewers to understand, while changing the setting to an outdoor area with trees and vegetation helped recreate an environment closer to where the real phenomenon occurs.
 
 Our initial storyboards were like this:
 ![Storyboard1](./Storyboard1.jpeg)
@@ -186,7 +164,6 @@ Our initial storyboards were like this:
 ![Storyboard3](./Storyboard3.jpeg)
 
 ---
-
 
 
 *Assignment lineage: this lab merges "Staging Interaction" (Interactive Lab Hub)
