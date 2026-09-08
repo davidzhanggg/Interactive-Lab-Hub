@@ -101,7 +101,8 @@ Each male firefly starts with a different flashing rhythm. When one phone flashe
 We also changed the appearance of the light to better represent fireflies. The phones flash yellow-green against a dark background, with each flash quickly becoming bright and then gradually fading. We added a separate female firefly mode that waits for the males' flashes and responds during the dark interval with a smaller amber flash.
 
 The control panel still allows us to manually trigger flashes by clicking on the screen, but the synchronization itself runs automatically between the phones.
-
+Here is a small demonstration of our prototype:
+https://youtu.be/_R3bFsO5vQc
 
 ## Part D. Wizard the Device
 
@@ -115,12 +116,14 @@ To improve this, we modified the Tinkerbelle code so that the flashing patterns 
 For our final prototype, we drew two large fireflies on paper, each big enough to cover a mobile phone. We placed a phone underneath each paper firefly so that the phone's light appears to come from the firefly itself. When recording the interaction outside in a dark environment, this makes the flashing lights look more like fireflies rather than simply two phone screens turning on and off.
 
 **What concerns or opportunities shaped the way you designed its look?**
+
 One of our main concerns was making the interaction recognizable. In our first prototype, we only used the phones to represent the fireflies, which made the synchronization visible but did not really communicate the forest or firefly setting. Using paper fireflies helps hide the phones and makes it clearer what each light represents.
 
 We also wanted to keep the costume simple so that it would not interfere with the phone's light. The paper design allows the light to remain visible while giving the device the appearance of a firefly. Recording outside in a darker environment also gives us the opportunity to recreate the natural setting more closely and make the flashes stand out.
 
 ![Firefly costume](./Costume1.jpeg)
 ![Firefly costume 2](./Costume2.jpeg)
+![Firefly costume 3](./Costume3.jpeg)
 
 
 ## Part F. Record
