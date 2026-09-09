@@ -1,5 +1,5 @@
 # Interactive Prototyping: The Clock of Pi
-**NAMES OF COLLABORATORS HERE**
+**Xiaowei David Zhang Chen and Alex Yen**
 
 Does it feel like time is moving strangely during this semester?
 
