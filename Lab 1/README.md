@@ -39,14 +39,12 @@ The core interaction of our masterwork would be:
 **What does synchrony look/feel like to an observer?** A person finds a synchronized firefly display in a dark forest and experiences the contrast between the collective flashes and periods of darkness.
 Frames:
 1. A person walks into a dark forest at night.
-2. The forest is almost completely dark, with the person looking around.
-3. Suddenly, many fireflies flash together around the person.
-4. The fireflies stop flashing and the forest becomes dark again.
-5. Another synchronized burst lights up the surroundings.
-6. The person stops and watches the repeating pattern in surprise.
+2. Suddenly, many fireflies flash together around the person.
+3. The fireflies stop flashing and the forest becomes dark again.
+4. Another synchronized burst lights up the surroundings.
+5. The person stops and watches the repeating pattern in surprise.
 
-<img width="1786" height="2048" alt="Storyboard1" src="https://github.com/user-attachments/assets/de0a67a3-66c4-4f37-bf70-24430ca42b85" />
-
+![Storyboard1](./Storyboard1.png)
 
 ### **Storyboard 2: Group Synchronization** 
 **How does synchrony emerge?** A group of fireflies flashing at different times, until they eventually become synchronized (gradual synchronization).
@@ -57,7 +55,7 @@ Frames:
 4. Their flashes become closer together.
 5. Everyone flashes together and continues synchronized flashing.
 
-<img width="2030" height="2048" alt="Storyboard2" src="https://github.com/user-attachments/assets/5f0e0675-dc28-43af-9db6-bbb7a67de82b" />
+![Storyboard2](./Storyboard2.jpeg)
 
 
 ### **Storyboard 3: Courtship**
@@ -70,9 +68,10 @@ Frames:
 5. The males flash again, responding/continuing the courtship sequence.
 6. The female responds again during the next dark interval.
 
-<img width="1253" height="1600" alt="Storyboard3" src="https://github.com/user-attachments/assets/1ee26cb7-c137-4dd7-a5ac-b0fd23447360" />
+![Storyboard3](./Storyboard3.jpeg)
 
 **Summarize the feedback you got here.**
+
 The main feedback we got was that our first two storyboards felt too similar, since both showed fireflies starting with different flashing rhythms and eventually becoming synchronized. We realized that the three storyboards should explore different aspects of the interaction rather than repeat the same synchronization process at different scales. We therefore changed the first storyboard to focus on how a person experiences the phenomenon, showing an observer entering the forest and gradually noticing the fireflies synchronize around them. We kept the second storyboard focused on how synchronization emerges within a group of fireflies, while the third explores the courtship interaction between synchronized males and a responding female. This gave us three different perspectives on the masterwork: the human experience, the synchronization process, and its role in courtship.
 
 ## Part B. Act out the Interaction
@@ -94,7 +93,9 @@ There are also some moments in the interaction where things could go in a differ
 
 ## Part C. Prototype the Light (light first!)
 
-We modified the original Tinkerbelle code to recreate the flashing and synchronization behaviour of fireflies. In the original version, we could control the color of all connected phones from the laptop, but for our prototype, we changed it so that each phone represents an individual firefly and controls its own flashing rhythm.
+We modified the original Tinkerbelle code to recreate the flashing and synchronization behaviour of fireflies. In the original version, we could control the color of all connected phones from the laptop, but for our prototype, we changed it so that each phone represents an individual firefly and controls its own flashing rhythm. 
+
+Once we run the server from the laptop, both phones can connect by selecting “Male Firefly.” The server automatically assigns them as “Male Firefly 1” and “Male Firefly 2.” Each firefly initially follows its own flashing pattern, and the server tracks their timing and gradually adjusts their rhythms until their flashes become synchronized.
 
 Each male firefly starts with a different flashing rhythm. When one phone flashes, it sends a signal through the Tinkerbelle server to the other phones. The other fireflies use this signal to slightly adjust the timing of their next flash. After several rounds, their rhythms gradually become closer until they eventually flash together. This allows the synchronization to emerge from the interaction between the phones rather than being directly controlled by one person.
 
@@ -158,10 +159,8 @@ Overall, the feedback was positive about our explanation of firefly synchrony an
 
 We remixed the modality by adding both light and sound to the final video performance. The paper fireflies also helped make the interaction easier for viewers to understand, while changing the setting to an outdoor area with trees and vegetation helped recreate an environment closer to where the real phenomenon occurs.
 
-Our initial storyboards were like this:
-![Storyboard1](./Storyboard1.jpeg)
-![Storyboard2](./Storyboard2.jpeg)
-![Storyboard3](./Storyboard3.jpeg)
+Our initial first storyboard focused on two fireflies gradually synchronizing their flashes. However, based on the feedback we received, we realized that it was too similar to our second storyboard, which also focused on the synchronization process. Therefore, we redesigned the first storyboard to explore a different perspective, focusing instead on how a human observer experiences the masterwork and reacts to the synchronized flashing.
+![OriginalStoryboard](./Storyboard1old.jpeg)
 
 ---
 
