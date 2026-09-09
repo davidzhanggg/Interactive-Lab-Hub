@@ -2,8 +2,6 @@
 
 Tinkerbelle is a multi-device interaction prototype where phones act as synchronized fireflies. The server keeps shared simulation parameters, and each connected device can take on a role such as controller, male firefly, female firefly, or idle device. As phones flash and listen to each other, their rhythms adapt over time through phase coupling and period matching.
 
-<img src="/imgs/Snapshot.PNG" alt="Tinkerbelle firefly setup" width="300"/>
-
 ## What changed in this version
 
 This version moves beyond the original color-picker demo and adds:
