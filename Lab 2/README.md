@@ -1,5 +1,5 @@
 # Interactive Prototyping: The Clock of Pi
-**Xiaowei David Zhang Chen and Alex Yen**
+**Xiaowei David Zhang Chen and Alexander Yen**
 
 Does it feel like time is moving strangely during this semester?
 
@@ -197,10 +197,12 @@ We strongly discourage literal digital or analog clock display: Be creative.
 
 ** Insert ideas, sketches, [Verplank diagrams](https://ccrma.stanford.edu/courses/250a-fall-2004/IDSketchbok.pdf)), storyboards for your ideas **
 
-My first idea was to create an hourglass clock, but I felt that it was a little too simple, so I decided to make the representation of time more personal. Since arriving in New York City three weeks ago, I have really enjoyed watching the sunsets, especially with the city skyline in the background. That inspired me to create a Sun and Moon Clock based on the way the sky changes throughout the day.
+Our first idea was to create an hourglass clock, but we felt that it was a little too simple, so we decided to make the representation of time more personal. Since arriving in New York City, we have really enjoyed watching the sunsets, especially with the city skyline in the background. That inspired us to create a Sun and Moon Clock based on the way the sky changes throughout the day.
 
 This clock represents the passage of time using the movement of the sun and moon across the screen. During the day, the sun starts near the bottom-left of the display, gradually rises upward until it reaches the middle of the sky around midday, and then moves down toward the bottom-right to represent sunset.
-At night, the sun is replaced by the moon, which follows a similar path across the screen until the next morning, when the cycle begins again. The NYC skyline remains at the bottom of the display while the sky changes throughout the day and night. This creates a continuous visual representation of time that allows the user to understand roughly what part of the day they are in without having to read the exact time.
+At night, the sun is replaced by the moon, which follows a similar path across the screen until the next morning, when the cycle begins again. The NYC skyline remains at the bottom of the display while the sky changes throughout the day and night. This creates a continuous visual representation of time that allows the user to understand roughly what part of the day they are in without having to read the exact time. 
+
+We also want the user to be able to check the exact time when needed, so we are thinking of an additional feature: by pressing one of the buttons on the Raspberry Pi, the display would temporarily switch from the Sun and Moon visualization to the current time. After a few seconds, it would return to the visual clock. This keeps the main experience more expressive while still allowing the clock to function as a practical timekeeping device.
 
 ### Storyboard
 1. **Dawn**: Sun rises from the bottom-left. The city begins to wake up.
