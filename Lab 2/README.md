@@ -219,8 +219,11 @@ We also want the user to be able to check the exact time when needed, so we are 
 
 
 **Put the names of the people you gave feedback to here. (Even better, add links to their repos here!)**
-- Ziqiao Gao: https://github.com/zg375/Interactive-Lab-Hub/tree/Fall2026/Lab%202
-- Sina Liu: https://github.com/SinaL0123/Interactive-Lab-Hub/tree/Fall2026/Lab%202
+- Ziqiao Gao: I really like the storyboard and the transition from dawn to night is very clear, especially with the sun/moon moving along the arc and the lighting changing throughout the day. One thing you could explore is adding another interaction with the second button, since right now the user mainly watches the clock and uses one button to check the exact time. Maybe the second button could let the user interact with or change some aspect of the visualization.
+https://github.com/zg375/Interactive-Lab-Hub/tree/Fall2026/Lab%202
+
+- Sina Liu: I really like your Sun and Moon Clock idea! It would be so nice to watch the sunrise and sunset over the New York skyline on this tiny screen. Maybe you could connect the visualization to the actual sunrise and sunset times in New York, since the length of the day changes with the seasons. I was also thinking that adding some weather elements could be interesting too! （like rainy/ snowy days..). The button interaction you mentioned sounds really practical, and maybe you could also show it in the storyboard. Also, since the assignment discourages literal clock displays, I was wondering if the small analog clocks in the sketches are just annotations or if they would be part of the final interface. Overall, nice work!
+https://github.com/SinaL0123/Interactive-Lab-Hub/tree/Fall2026/Lab%202
 
 
 # Lab 2 Part 2
