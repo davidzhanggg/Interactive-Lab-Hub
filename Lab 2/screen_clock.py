@@ -6,7 +6,7 @@ from PIL import Image, ImageDraw, ImageFont
 import adafruit_rgb_display.st7789 as st7789
 
 from button_controls import button_a_pressed, button_b_pressed, create_time_screen, create_weather_screen
-from weather import get_current_temperature
+from weather import get_current_weather
 
 # Configuration for CS and DC pins (these are FeatherWing defaults on M0/M4):
 cs_pin = digitalio.DigitalInOut(board.D5) 
@@ -71,14 +71,15 @@ while True:
     # current_time = time.strftime("%m/%d/%Y %H:%M:%S")
     # draw.text((10,10), current_time, font=font, fill=255)
 
+    temperature, condition_code = get_current_weather()
 
     while True:
         if button_a_pressed():
             frame = create_time_screen(width, height)
         elif button_b_pressed():
-            temperature = get_current_temperature()
-            frame = create_weather_screen(width, height, temperature)
+            frame = create_weather_screen(width, height, temperature, condition_code)
         else:
+            # alex part here
             frame = Image.new(
                 "RGB",
                 (width, height),
@@ -88,20 +89,3 @@ while True:
         disp.image(frame, rotation)
         time.sleep(0.05)
 
-    # images = [
-    #     "images/dawn.png",
-    #     "images/morning.png",
-    #     "images/midday.png",
-    #     "images/afternoon.png",
-    #     "images/dusk.png",
-    #     "images/night.png",
-    # ]
-
-    # while True:
-    #     for image in images:
-    #         test_image = Image.open(image).convert("RGB")
-    #         test_image = test_image.resize((240,135))
-
-    #         # Display image.
-    #         disp.image(test_image, rotation)
-    #         time.sleep(2)
