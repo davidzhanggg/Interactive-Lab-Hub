@@ -253,7 +253,7 @@ Start small, pick just one element of your overall idea, just to show you have a
 \*\*\***Take a video of your barely modified PiClock.**\*\*\*
 
 
-This is a video of our barely modified PiClock. At this stage, the display had a black background with a simple “Weather” label and a fixed temperature value, since we had not yet implemented the Weather API. Later, we changed the background to white so that it matched the weather icons better. We also replaced the fixed temperature with real-time weather information retrieved from the WeatherAPI service: https://www.weatherapi.com/
+This is a video of our barely modified PiClock. At this stage, the display had a black background with a simple “Weather” label and a fixed temperature value, since we had not yet implemented the Weather API. Later, we changed the background to white so that it matched the weather icons better. We also replaced the fixed temperature with real-time weather information retrieved from the WeatherAPI service (https://www.weatherapi.com/)
 
 https://drive.google.com/file/d/1NtzD44-0iaYGWbAIoqBGaINFnMogyse4/view?usp=sharing
 
@@ -275,7 +275,8 @@ After that, Git will ask you to login to your GitHub account to push the updates
 Do take advantage of having done the previous iteration to refine and simplify your design.
 
 ** Insert any updates ideas, sketches, [Verplank diagrams](https://ccrma.stanford.edu/courses/250a-fall-2004/IDSketchbok.pdf))!, storyboards for your ideas **
-We utilized Gemini to help generate a Verplank diagram for better visual explanation. We also used WeatherAPI to retrieve real-time temperature and weather-condition data for New York City.
+
+We utilized Gemini to help generate a Verplank diagram for better visual explanation. We also used WeatherAPI to retrieve real-time temperature and weather-condition data for New York City (it required using an API KEY).
 
 ![VerplankDiagram](VerplankDiagram.png)
 
