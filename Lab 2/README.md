@@ -225,6 +225,9 @@ https://github.com/zg375/Interactive-Lab-Hub/tree/Fall2026/Lab%202
 - Sina Liu: I really like your Sun and Moon Clock idea! It would be so nice to watch the sunrise and sunset over the New York skyline on this tiny screen. Maybe you could connect the visualization to the actual sunrise and sunset times in New York, since the length of the day changes with the seasons. I was also thinking that adding some weather elements could be interesting too! （like rainy/ snowy days..). The button interaction you mentioned sounds really practical, and maybe you could also show it in the storyboard. Also, since the assignment discourages literal clock displays, I was wondering if the small analog clocks in the sketches are just annotations or if they would be part of the final interface. Overall, nice work!
 https://github.com/SinaL0123/Interactive-Lab-Hub/tree/Fall2026/Lab%202
 
+- Eric Liu: Looks good maybe you can make the movement more linear of the moon and sun, feels a little choppy. I like the clicking the button to show the time and temp.
+https://github.com/eliu1122/Interactive-Lab-Hub/tree/Fall2026/Lab%202
+
 
 # Lab 2 Part 2
 
@@ -248,6 +251,9 @@ Start small, pick just one element of your overall idea, just to show you have a
 ## Make a short video of your modified barebones PiClock
 
 \*\*\***Take a video of your barely modified PiClock.**\*\*\*
+
+![BarelyModifiedPiClock](initialpiclock.png)
+
 
 After you edit and work on the scripts for Lab 2, the files should be upload back to your own GitHub repo! You can push to your personal github repo by adding the files here, commiting and pushing.
 
