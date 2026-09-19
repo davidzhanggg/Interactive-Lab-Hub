@@ -252,6 +252,11 @@ Start small, pick just one element of your overall idea, just to show you have a
 
 \*\*\***Take a video of your barely modified PiClock.**\*\*\*
 
+
+This is a video of our barely modified PiClock. At this stage, the display had a black background with a simple “Weather” label and a fixed temperature value, since we had not yet implemented the Weather API. Later, we changed the background to white so that it matched the weather icons better. We also replaced the fixed temperature with real-time weather information retrieved from the WeatherAPI service: https://www.weatherapi.com/
+
+https://drive.google.com/file/d/1NtzD44-0iaYGWbAIoqBGaINFnMogyse4/view?usp=sharing
+
 ![BarelyModifiedPiClock](initialpiclock.png)
 
 
@@ -270,15 +275,20 @@ After that, Git will ask you to login to your GitHub account to push the updates
 Do take advantage of having done the previous iteration to refine and simplify your design.
 
 ** Insert any updates ideas, sketches, [Verplank diagrams](https://ccrma.stanford.edu/courses/250a-fall-2004/IDSketchbok.pdf))!, storyboards for your ideas **
+We utilized Gemini to help generate a Verplank diagram for better visual explanation. We also used WeatherAPI to retrieve real-time temperature and weather-condition data for New York City.
 
+![VerplankDiagram](VerplankDiagram.png)
 
 \*\*\***Put a copy of your code in your Lab 2 Github repo.**\*\*\*
 
 \*\*\***Take a video of your PiClock.**\*\*\*
 
+https://drive.google.com/file/d/1vNujA6JBeXw9n8Dss075LqJndH7WuRUh/view?usp=sharing
 
-As always, make sure you document contributions and ideas from others (and AI) explicitly in your writeup.
+After receiving feedback, we refined our initial clock design by creating a more realistic NYC-inspired day and night skyline. The sun and moon move across the screen over time to represent the progression of the day. In the actual clock, the sun follows the daytime period from approximately 6:00 AM to 6:00 PM, although for the demo we sped up the passage of time so that the full movement could be shown more clearly.
 
-You are permitted (but not required) to work in groups and share a turn in; you are expected to make equal contribution on any group work you do, and N people's group project should look like N times the work of a single person's lab.  Make sure the page for the group turn in is linked to your personal Interactive Lab Hub page. 
+Initially, we planned to use only Button A, which would display the current date and exact time. However, we later decided to make use of Button B as well by adding real-time weather information. To do this, we integrated WeatherAPI and displayed the current temperature together with a weather icon. We created different icons for conditions such as sunny, rainy, cloudy, stormy, and snowy, making the weather information easier to understand at a glance.
+
+I collaborated with Alexander Yen to complete this project: https://github.com/Alexyen04/Alex-Yen-Interactive-Lab-Hub/tree/Fall2026/Lab%202
 
 
