@@ -1,6 +1,7 @@
+
 #!/usr/bin/env bash
 
-TEXT="Hi David! Its time to go home"
+TEXT="Hello David! This is my voice, do you like it?"
 
 VOICES_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)/voices"
 
