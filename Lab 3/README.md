@@ -1,6 +1,6 @@
 # Chatterboxes
 
-**NAMES OF COLLABORATORS HERE**
+**Xiaowei David Zhang Chen**
 
 [![Watch the video](https://user-images.githubusercontent.com/1128669/135009222-111fe522-e6ba-46ad-b6dc-d1633d21129c.png)](https://www.youtube.com/embed/Q8FWzLMobx0?start=19)
 
@@ -108,6 +108,7 @@ The demo script also shows `--output-raw`, which streams audio to the speaker as
 
 \*\***Write your own shell file to use your favorite of these TTS engines to have your Pi greet you by name.**\*\*
 (This shell file should be saved to your own repo for this lab.)
+
 The shell file is saved at ~/Interactive-Lab-Hub/Lab\ 3/speech-scripts/david_greeting.sh.
 
 \*\***Then answer: Is the same greeting, in these different voices, the same greeting? Describe one concrete way the voice changed what the utterance seemed to mean or who seemed to be speaking.**\*\*
@@ -134,7 +135,16 @@ Available sizes, smallest first: `tiny.en`, `base.en`, `small.en`, `medium.en`. 
 
 \*\***Record a few seconds of your own speech (`arecord -d 5 -f cd -c 1 -r 16000 test.wav`) and transcribe it with at least two model sizes. Report the real-time factor for each. At what point does the accuracy improvement stop being worth the delay, for a system that has to answer you?**\*\*
 
+I tested three model sizes usnig the same 5-second recording.
+- **tiny.en** had a RTF of 0.24x and took 1.22 seconds to transcribe. It was mostly accurate, although it transcribed my sentence as "Hello, I'm David and I'm testing a speech recognition," adding an unnecessary "a."
+- **base.en** had a RTF of 0.40x and took 1.98s to transcribe. It transcribed the sentence correctly and accurately.
+- **small.en** had an RTF of 1.19x and took 5.96s, but the result was essentially the same as base.en.
+
+For this example, I think **base.en** gives the best balance between accuracy and responsiveness. Moving from tiny.en to base.en improved the transcription with only a small increase in delay, but moving to small.en made the system about three times slower without giving a noticeable improvement in accuracy. In a conversational system, I don't think that extra delay would be worth it because the user would have to wait almost six seconds for a response.
+
 \*\***Write your own script that verbally asks for a numerical input (a phone number, zipcode, number of pets) and records the answer the respondent provides.**\*\* Numbers are a good stress test — transcription systems make characteristic errors on digit strings, and you will want to know what they are before you design around them.
+
+The script I wrote is in ask_numberpets.sh. I had the Pi ask, “How many pets would you like to have?” and I answered “172.” I then transcribed the recording using three different models and all of them recognized the number correctly. base.en was the fastest in this test, with an RTF of 0.32x, compared with 0.75x for tiny.en and 0.95x for small.en.
 
 ## C. Turn-taking: knowing when someone has stopped talking
 
