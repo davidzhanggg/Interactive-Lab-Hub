@@ -168,6 +168,10 @@ Speak, pause, and watch it transcribe. Now change the endpointing threshold — 
 
 There is no correct value. A system that takes drink orders and a system that listens to someone think out loud want very different thresholds, and the right one depends on what your users are doing with their pauses.
 
+I tested three different silence thresholds using the sentence “I would like to order coffee,” with a short pause in the middle. With a **0.2s threshold**, the system cut me off very quickly, so it treated my pause as the end of my turn and split the sentence into "I will like" and "order coffee". This is too sensitive for real conversations because even a small pause while thinking can make the system to respond too early.
+I expected **0.7s** to work better but it still split my sentence into two parts. With a **1.5s threshold**, the system kept the entire sentence together so it was much more reliable for my speaking style, but it make the response feel slightly less immediate. 
+Based on these tests, I would choose a threshold somewhere between about **0.7 and 1.5s**, probably closer to 1 second or slightly above. This seems like a better balance between not interrupting the user and not making them wait too long after they finish speaking.
+
 ### The complete loop
 
 `echo_bot.py` puts the pieces together: it listens, endpoints, transcribes, and speaks a reply through Piper. The dialogue policy is deliberately trivial — it repeats what you said — so that everything you notice is a property of the timing rather than the content.
