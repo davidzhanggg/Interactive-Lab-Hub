@@ -182,15 +182,51 @@ Based on these tests, I would choose a threshold somewhere between about **0.7 a
 
 ## D. Storyboard
 
-Storyboard and/or use a Verplank diagram to design a speech-enabled device. (Stuck? Make a device that talks for dogs. If that is too stupid, find an application that is better than that.)
+For this part, I designed a calendar voice assistant that is connected to the user’s personal calendar. The goal is to let someone quickly ask about their schedule without needing to open their phone or computer. For example, the user could ask what they have today, what they have tomorrow, or what their next event is.
 
-\*\***Post your storyboard and diagram here.**\*\*
+### Storyboard
+1. The user approaches or sits near the device. The device is ready and indicates that it is listening.
+2. The user asks a natural question about their schedule, such as, “What do I have today?”
+3. The device listens to the user and waits for approximately 1 second of silence before deciding that the user has finished speaking.
+4. The device transcribes the speech, identifies what schedule information the user is asking for, and checks the connected Google Calendar.
+5. The device responds out loud with the relevant events, for example, “You have Interactive Device Design at 2:30 PM and a team meeting at 5 PM.”
+6. The user asks a follow-up question, such as, “What about tomorrow?”
+7. The device checks the calendar again and gives the requested information.
+8. The user can continue asking related questions, such as, “Am I free after 6?” or “What is my next event?”
 
-Write out what you imagine the dialogue to be. Use cards, post-its, or whatever method helps you develop alternatives or group responses.
+![Storyboard](Storyboard.jpeg)
 
-\*\***Please describe and document your process.**\*\*
+### Verplank Diagram
+![VerplankDiagram](VerplankDiagram.jpeg)
 
-Your script should include the pauses. Where does your device wait, and for how long? You now know from Part C that this is a parameter you have to choose, not something that happens for free.
+### Imagined Dialogue
+
+- **Device**: “Hi, you can ask me about your schedule.”
+- **User**: “What do I have today?”
+
+*[Device waits for about 1 second of silence to detect the end of the user’s turn.]*
+- **Device**: “You have Interactive Device Design at 2:30 PM and a team meeting at 5 PM.”
+
+*[Device waits and returns to listening mode.]*
+- **User**: “What about tomorrow?”
+
+*[Device waits for about 1 second of silence.]*
+- **Device**: “Tomorrow you have Applied Machine Learning at 10 AM and Product Studio at 3 PM.”
+
+*[Device waits and returns to listening mode.]*
+- **User**: “Am I free after 6?”
+
+*[Device waits for about 1 second of silence.]*
+- **Device**: “Yes, you are free after 6 PM.”
+
+### Design Process
+
+I chose this idea because checking a calendar is something people do frequently, specially students, and voice could make this interaction faster in situations where looking at a phone is inconvenient, such as while getting ready in the morning, eating breakfast, or packing a bag.
+I also considered which types of questions the assistant should support. Instead of trying to understand any possible calendar-related question, I would initially focus on a small set of common requests such as asking about today, tomorrow, the next event, or whether the user is free at a certain time. This keeps the interaction simple while still allowing users to phrase their questions naturally.
+
+The timing of the conversation was another important design decision. In Part C, I found that a silence threshold of 0.2 seconds was much too short and even 0.7 seconds could split a sentence during a natural pause. A threshold of 1.5 seconds was more reliable, but it also introduced a noticeable delay. So I decided to use a pause of approximately 1 second before deciding that the user has finished speaking. This should give the user enough time to pause naturally without making the assistant feel too slow.
+
+The device also needs to communicate its current state clearly. I imagine using a simple visual indicator, such as a light, to show whether it is listening, processing the calendar request, or speaking. This would help the user understand when they should talk and when they should wait for a response
 
 ## E. Acting out the dialogue
 
