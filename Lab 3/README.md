@@ -10,6 +10,9 @@ We will focus on **audio** as the main modality for interaction to start; these 
 
 A note on what you are building with. Speech interfaces are usually taught as two boxes — speech-in, speech-out — and that framing hides the part that actually determines whether an interaction works. Between listening and speaking sits the question of **whose turn it is**: when does the device decide you have finished talking, and how long does it make you wait before it answers? This lab gives you direct control over both, and we will ask you to notice what changes when you move them.
 
+<details>
+  <summary><strong> Prep for Part 1 (Click to Expand)</strong></summary>
+  
 ## Prep for Part 1: Get the Latest Content and Pick up Additional Parts
 
 Please check instructions in [prep.md](prep.md) and complete the setup.
@@ -34,10 +37,14 @@ pi@ixe00:~/Interactive-Lab-Hub $ git push
 
 Option 2: On your own GitHub repo, create a pull request to get updates from the class Interactive-Lab-Hub. After you have the latest updates online, go to your Pi, `cd` to your `Interactive-Lab-Hub` and use `git pull`.
 
+</details>
 ---
 
 # Part 1
 
+<details>
+  <summary><strong> Setup (Click to Expand)</strong></summary>
+  
 ## Setup
 
 Create and activate a virtual environment for this lab:
@@ -70,8 +77,13 @@ Then run the setup script, which installs the classic speech synthesizers, downl
 
 Check your audio devices before going further. `arecord -l` lists capture devices and `aplay -l` lists playback devices; if your webcam microphone or Bluetooth speaker does not appear, fix that first — every script below assumes the system defaults are the ones you want.
 
+</details>
+
 ## A. Text to Speech
 
+<details>
+  <summary><strong> Task Description (Click to Expand)</strong></summary>
+  
 Your Pi can speak in several quite different ways, and the differences are audible in a way that matters for design. In `speech-scripts/` there are shell scripts for each.
 
 ### The classic engines
@@ -106,8 +118,9 @@ Note that the Piper command line changed in version 1.x — voices are now downl
 
 The demo script also shows `--output-raw`, which streams audio to the speaker as it is generated rather than writing a file first. Listen for the difference in how quickly speech begins. In a conversational system this gap is the thing your user experiences as responsiveness.
 
+</details>
+
 \*\***Write your own shell file to use your favorite of these TTS engines to have your Pi greet you by name.**\*\*
-(This shell file should be saved to your own repo for this lab.)
 
 The shell file is saved at ~/Interactive-Lab-Hub/Lab\ 3/speech-scripts/david_greeting.sh.
 
@@ -117,6 +130,9 @@ The same meeting did not feel the same with different voices. Even though they w
 
 ## B. Speech to Text
 
+<details>
+  <summary><strong> Task Description (Click to Expand)</strong></summary>
+  
 We use [faster-whisper](https://github.com/SYSTRAN/faster-whisper), a reimplementation of OpenAI's Whisper model that runs several times faster on CPU and does not require PyTorch. All processing happens on the Pi; nothing is sent to a server.
 
 ```
@@ -133,6 +149,8 @@ The transcript is not the interesting output here — the timings are. Run it ag
 
 Available sizes, smallest first: `tiny.en`, `base.en`, `small.en`, `medium.en`. The `.en` variants are English-only and faster than their multilingual counterparts at the same size.
 
+<\details>
+
 \*\***Record a few seconds of your own speech (`arecord -d 5 -f cd -c 1 -r 16000 test.wav`) and transcribe it with at least two model sizes. Report the real-time factor for each. At what point does the accuracy improvement stop being worth the delay, for a system that has to answer you?**\*\*
 
 I tested three model sizes usnig the same 5-second recording.
@@ -147,6 +165,9 @@ For this example, I think **base.en** gives the best balance between accuracy an
 The script I wrote is in ask_numberpets.sh. I had the Pi ask, “How many pets would you like to have?” and I answered “172.” I then transcribed the recording using three different models and all of them recognized the number correctly. base.en was the fastest in this test, with an RTF of 0.32x, compared with 0.75x for tiny.en and 0.95x for small.en.
 
 ## C. Turn-taking: knowing when someone has stopped talking
+
+<details>
+  <summary><strong> Task Description (Click to Expand)</strong></summary>
 
 Everything so far has worked on fixed audio files. A real conversational device does not get told when to start and stop recording — it has to decide. This is the problem that makes speech interfaces hard, and it is mostly not a speech recognition problem.
 
@@ -164,6 +185,16 @@ Speak, pause, and watch it transcribe. Now change the endpointing threshold — 
 (.venv) $ python listen.py --min-silence 1.5
 ```
 
+### The complete loop
+
+`echo_bot.py` puts the pieces together: it listens, endpoints, transcribes, and speaks a reply through Piper. The dialogue policy is deliberately trivial — it repeats what you said — so that everything you notice is a property of the timing rather than the content.
+
+```
+(.venv) $ python echo_bot.py
+```
+
+<\details>
+
 \*\***Try both extremes, and something in between. Describe what each one feels like to talk to. Note specifically: at 0.2s, what kinds of normal speech get cut off? At 1.5s, what does the delay make the system seem like?**\*\*
 
 There is no correct value. A system that takes drink orders and a system that listens to someone think out loud want very different thresholds, and the right one depends on what your users are doing with their pauses.
@@ -172,13 +203,6 @@ I tested three different silence thresholds using the sentence “I would like t
 I expected **0.7s** to work better but it still split my sentence into two parts. With a **1.5s threshold**, the system kept the entire sentence together so it was much more reliable for my speaking style, but it make the response feel slightly less immediate. 
 Based on these tests, I would choose a threshold somewhere between about **0.7 and 1.5s**, probably closer to 1 second or slightly above. This seems like a better balance between not interrupting the user and not making them wait too long after they finish speaking.
 
-### The complete loop
-
-`echo_bot.py` puts the pieces together: it listens, endpoints, transcribes, and speaks a reply through Piper. The dialogue policy is deliberately trivial — it repeats what you said — so that everything you notice is a property of the timing rather than the content.
-
-```
-(.venv) $ python echo_bot.py
-```
 
 ## D. Storyboard
 
@@ -230,10 +254,12 @@ The device also needs to communicate its current state clearly. I imagine using 
 
 ## E. Acting out the dialogue
 
-Find a partner, and *without sharing the script with your partner* try out the dialogue you've designed, where you (as the device designer) act as the device you are designing. Please record this interaction (for example, using Zoom's record feature).
-
 \*\***Describe if the dialogue seemed different than what you imagined when it was acted out, and how.**\*\*
 
+The dialogue was a bit different from what I expected. My partner asked some questions and made requests that I had not originally designed for, such as asking the device to “Schedule a study session on Wednesday” or asking, “How many hours am I free this week?” These interactions showed me that users may expect the device to do more than just read their calendar and may naturally assume that it can also create events or summarize their available time.
+I also noticed that, without giving my partner any context beforehand, it was difficult for him to immediately understand what the device could do. Because of this, I am considering adding a short opening prompt such as, “Hi, you can ask me about your schedule.” This would help the user understand the purpose of the device without forcing them to use one specific command or follow a predefined script.
+
+The video recording can be seen here: https://drive.google.com/file/d/1XIubQh-KEnMAhRUOoDKgj7qbNsnseD6g/view?usp=sharing
 
 ---
 
