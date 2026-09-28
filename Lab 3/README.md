@@ -4,11 +4,17 @@
 
 [![Watch the video](https://user-images.githubusercontent.com/1128669/135009222-111fe522-e6ba-46ad-b6dc-d1633d21129c.png)](https://www.youtube.com/embed/Q8FWzLMobx0?start=19)
 
+
+<details>
+  <summary><strong> Introduction (Click to Expand)</strong></summary>
+  
 In this lab, we want you to design interaction with a speech-enabled device — something that listens and talks to you. This device can do anything *but* control lights (since we already did that in Lab 1). First, we want you to storyboard what you imagine the conversational interaction to be like. Then you will use wizarding techniques to elicit examples of what people might say, ask, or respond. We then want you to use the examples collected from at least two other people to inform the redesign of the device.
 
 We will focus on **audio** as the main modality for interaction to start; these general techniques can be extended to **video**, **haptics** or other interactive mechanisms in the second part of the Lab.
 
 A note on what you are building with. Speech interfaces are usually taught as two boxes — speech-in, speech-out — and that framing hides the part that actually determines whether an interaction works. Between listening and speaking sits the question of **whose turn it is**: when does the device decide you have finished talking, and how long does it make you wait before it answers? This lab gives you direct control over both, and we will ask you to notice what changes when you move them.
+
+</details>
 
 <details>
   <summary><strong> Prep for Part 1 (Click to Expand)</strong></summary>
@@ -149,7 +155,7 @@ The transcript is not the interesting output here — the timings are. Run it ag
 
 Available sizes, smallest first: `tiny.en`, `base.en`, `small.en`, `medium.en`. The `.en` variants are English-only and faster than their multilingual counterparts at the same size.
 
-<\details>
+</details>
 
 \*\***Record a few seconds of your own speech (`arecord -d 5 -f cd -c 1 -r 16000 test.wav`) and transcribe it with at least two model sizes. Report the real-time factor for each. At what point does the accuracy improvement stop being worth the delay, for a system that has to answer you?**\*\*
 
@@ -193,7 +199,7 @@ Speak, pause, and watch it transcribe. Now change the endpointing threshold — 
 (.venv) $ python echo_bot.py
 ```
 
-<\details>
+</details>
 
 \*\***Try both extremes, and something in between. Describe what each one feels like to talk to. Note specifically: at 0.2s, what kinds of normal speech get cut off? At 1.5s, what does the delay make the system seem like?**\*\*
 
@@ -250,7 +256,7 @@ I also considered which types of questions the assistant should support. Instead
 
 The timing of the conversation was another important design decision. In Part C, I found that a silence threshold of 0.2 seconds was much too short and even 0.7 seconds could split a sentence during a natural pause. A threshold of 1.5 seconds was more reliable, but it also introduced a noticeable delay. So I decided to use a pause of approximately 1 second before deciding that the user has finished speaking. This should give the user enough time to pause naturally without making the assistant feel too slow.
 
-The device also needs to communicate its current state clearly. I imagine using a simple visual indicator, such as a light, to show whether it is listening, processing the calendar request, or speaking. This would help the user understand when they should talk and when they should wait for a response
+The device also needs to communicate its current state clearly. I imagine using a simple visual indicator, such as a light, to show whether it is listening, processing the calendar request, or speaking. This would help the user understand when they should talk and when they should wait for a response.
 
 ## E. Acting out the dialogue
 
