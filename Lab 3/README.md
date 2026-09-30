@@ -231,7 +231,6 @@ For this part, I designed a calendar voice assistant that is connected to the us
 
 ### Imagined Dialogue
 
-- **Device**: “Hi, you can ask me about your schedule.”
 - **User**: “What do I have today?”
 
 *[Device waits for about 1 second of silence to detect the end of the user’s turn.]*
@@ -276,8 +275,54 @@ For Part 2, you will redesign the interaction with the speech-enabled device usi
 ## Prep for Part 2
 
 1. What are concrete things that could use improvement in the design of your device? For example: wording, timing, anticipation of misunderstandings.
+
+One improvement would be to make more clear what my device can do. During the acting-out exercise, my partner did not immediately know what kind of questions he could ask, so I would add an opening prompt, such as "Hello! I am your personal calendar assistant. How can I help you today?"
+I would also improve the timing of the interaction, since short silence thresholds could cut the user off mid-sentence, while longer ones made the device feel slower, so I would use a pause of around 1-1.2 seconds before deciding that the user has finished speaking.
+Finally, I would also support more variety calendar requests, such as scheduling an event for X day. This is because users may expect the assistant not only to read their calendar, but also to summarize free time and create new events.
+
+  
 2. What are other modes of interaction *beyond speech* that you might also use to clarify how to interact? In particular: how does someone know when the device is listening, and when it is thinking? You have a screen and an LED.
+
+I would use visual feedback on the Raspberry Pi screen to make the state of the device clear. For example, green light to show that the device is listening, orange/yellow to say that the device is processing the request, and blue to indicate that the device is speaking.
+The screen could also display short messages such as “Listening...”, “Checking your calendar...”, or the event information being spoken. This would make it easier for the user to understand what the device is doing and when they should speak.
+
 3. Make a new storyboard, diagram and/or script based on these reflections.
+
+- **Device**: “Hello! I'm your personal calendar assistant. I can help you check your schedule, find free time, and create new events. How can I help you today?"
+- **User**: “That's amazing! What do I have today?”
+
+*[Device waits for about 1 second of silence to detect the end of the user’s turn.]*
+- **Device**: “You have Interactive Device Design at 2:30 PM and a team meeting at 5 PM.”
+
+*[Device waits and returns to listening mode.]*
+- **User**: “What about tomorrow?”
+
+*[Device waits for about 1 second of silence.]*
+- **Device**: “Tomorrow you have Applied Machine Learning at 10 AM and Product Studio at 3 PM.”
+
+*[Device waits and returns to listening mode.]*
+- **User**: “Where is the Applied Machine Learning class taking place?”
+
+*[Device waits for about 1 second of silence.]*
+- **Device**: “It is in Bloomberg 141.”
+
+*[Device waits and returns to listening mode.]*
+- **User**: “Am I free after 6?”
+
+*[Device waits for about 1 second of silence.]*
+- **Device**: “Yes, you are free after 6 PM.”
+
+*[Device waits and returns to listening mode.]*
+- **User**: “Nice, help me schedule a two-hour study session tomorrow after 6PM."
+
+*[Device waits for about 1 second of silence.]*
+- **Device**: “Okay, I created a study session for tomorrow from 6 to 8PM. Is there anything else I can help you with?”
+
+*[Device waits and returns to listening mode.]*
+- **User**: “That's all, thank you."
+- **Device**: "You are welcome!"
+
+
 4. (optional) Integrate [input devices](inputs.md) in the system
 
 ## Prototype your system
