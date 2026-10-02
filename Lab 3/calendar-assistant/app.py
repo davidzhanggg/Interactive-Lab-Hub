@@ -17,9 +17,17 @@ while True:
         events = get_tomorrow_events()
         print("Assistant: ", format_events(events))
 
+    elif "next" in question:
+        event = get_next_event()
+        if event:
+            print("Assistant: ", format_events(event))
+        else:
+            print("Assistant:", "You don't have any upcoming events.")
+
     elif question in ["quit", "exit", "bye", "that's all"]:
         print("Assistant: Goodbye!")
         break
+
 
     # elif "where" in question:
     #     events = get_tommo
