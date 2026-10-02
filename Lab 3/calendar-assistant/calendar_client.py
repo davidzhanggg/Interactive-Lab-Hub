@@ -56,7 +56,7 @@ def get_tomorrow_events():
 
 def get_next_event():
     service = get_service()
-    now = datetime.date.now().astimezone()
+    now = datetime.datetime.now().astimezone()
 
     result = service.events().list(
         calendarId="primary",
@@ -200,7 +200,7 @@ def friendly_title(title):
     return title
 
 # Formats the information of an event
-def format_events(events, include_location=False):
+def format_events(events, include_location=False, include_date=False):
     if not events:
         return "You don't have anything scheduled."
 
@@ -213,10 +213,19 @@ def format_events(events, include_location=False):
         if "dateTime" in start:
             dt = datetime.datetime.fromisoformat(start["dateTime"])
             time_string = dt.strftime("%-I:%M %p")
-        else:
-            time_string = "all day"
+            day_string = dt.strftime("%A")
 
-        text = f"{title} at {time_string}"
+            if include_date:
+                text = f"{title} on {day_string} at {time_string}"
+            else:
+                text = f"{title} at {time_string}"
+
+        else:
+            if include_date:
+                day = datetime.date.fromisoformat(start["date"])
+                text = f"{title} on {day.strftime('%A')}, all day"
+            else:
+                text = f"{title}, all day"
 
         if include_location:
             location = event.get("location")
