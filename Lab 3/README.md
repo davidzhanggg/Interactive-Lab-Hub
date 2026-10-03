@@ -357,17 +357,14 @@ The visual feedback on the Raspberry Pi screen also worked well because it gave 
 One issue was that users did not always know what commands they could use or what the system was capable of. The commands that were implemented worked well, but the user had little guidance about what to say.
 
 ### What worked well about the controller and what didn't?
-\*\**your answer here*\*\*
 The terminal controller made it easy to debug the system because I could see exactly what Whisper transcribed and verify the assistant's response. However, some requests or variations of existing requests were not recognized. Sometimes this was because speech recognition failed to detect the correct words, and other times it was because that specific phrasing or command was not implemented, e.g. a user said "I want to schedule an event," but the controller did not recognize it and kept responding with "Sorry, I didn't understand that."
 Users also asked for commands that were not implemented, such as “Delete an event,” “What else can I do?” and “Help.”
 
 ### What lessons can you take away from the WoZ interactions for designing a more autonomous version of the system?
-\*\**your answer here*\*\*
 The WoZ interactions showed that users can ask many different and unexpected requests, such as "How much free time do I have today", "Help", "What else can I do", or "Delete event".
 This means that a more autonomous version should support more than just a few fixed commands and should be able to recognize different ways of expressing the same intent. The assistant should also explain what it can do at the beginning or provide help when the user asks (such as telling them line commands they can say), because otherwise users may not know what kinds of requests are supported.
 
 ### How could you use your system to create a dataset of interaction? What other sensing modalities would make sense to capture?
-\*\**your answer here*\*\*
 The system could create a dataset by logging the user's speech, Whisper transcription, detected intent, system response, whether the user had to repeat themselves, how long recognition/processing took, and whether actions such as event creation were confirmed or cancelled. 
 This could help identify common requests and cases where either the speech recognition or intent parser fails.
 
