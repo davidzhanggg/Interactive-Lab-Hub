@@ -15,6 +15,7 @@ from calendar_client import (
 
 from intent_parser import parse_intent, parse_create_event
 from speech import listen, speak
+from ui import show_ready, show_listening, show_processing, show_speaking
 
 
 pending_event = None
@@ -26,7 +27,11 @@ last_event = None
 # --------------------------------------------------
 def reply(text):
     print("Assistant:", text)
-    speak(text)
+    show_speaking(text)
+    try:
+        speak(text)
+    finally:
+        show_ready()
 
 
 # --------------------------------------------------
@@ -47,7 +52,10 @@ while True:
     # --------------------------------------------------
     # Listen to the user
     # --------------------------------------------------
-    raw_question = listen().strip()
+    raw_question = listen(
+        on_listening=show_listening,
+        on_processing=show_processing,
+    ).strip()
     
     # Show what Whisper recognized after "You:"
     print(raw_question)

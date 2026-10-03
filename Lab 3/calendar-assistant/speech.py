@@ -65,7 +65,8 @@ def build_vad():
 # Listen for ONE utterance and return the transcript
 # --------------------------------------------------
 
-def listen():
+def listen(on_listening=None, on_processing=None):
+    """Listen once, optionally reporting microphone and transcription states."""
     if not VAD_MODEL.is_file():
         raise FileNotFoundError(
             f"VAD model not found at {VAD_MODEL}"
@@ -85,6 +86,9 @@ def listen():
         dtype="float32",
         samplerate=SAMPLE_RATE
     ) as stream:
+
+        if on_listening is not None:
+            on_listening()
 
         while True:
             chunk, _ = stream.read(samples_per_read)
@@ -106,18 +110,21 @@ def listen():
                 )
 
                 vad.pop()
+                break
 
-                segments, _ = recognizer.transcribe(
-                    utterance,
-                    beam_size=1
-                )
+    # Close the microphone before transcription and the assistant's reply.
+    if on_processing is not None:
+        on_processing()
 
-                text = " ".join(
-                    segment.text.strip()
-                    for segment in segments
-                ).strip()
+    segments, _ = recognizer.transcribe(
+        utterance,
+        beam_size=1
+    )
 
-                return text
+    return " ".join(
+        segment.text.strip()
+        for segment in segments
+    ).strip()
 
 
 # --------------------------------------------------
