@@ -28,6 +28,13 @@ NUMBER_WORDS = {
 }
 
 
+def normalize_time_text(text):
+    """Accept Whisper's dotted or spaced AM/PM spellings."""
+    text = text.lower().strip()
+    text = re.sub(r"\b([ap])\s*\.?\s*m\b\.?", r"\1m", text)
+    return text.rstrip(".?!,")
+
+
 def parse_intent(text, now=None):
     text = text.lower().strip().rstrip(".?!,")
 
@@ -126,7 +133,7 @@ def parse_create_event(text, now=None):
     Add a 2 hour meeting today at 4 PM
     """
 
-    text = text.lower().strip().rstrip(".?!,")
+    text = normalize_time_text(text)
 
     pattern = (
         r"(?:schedule|create|add)"
@@ -201,7 +208,7 @@ def parse_create_event(text, now=None):
 
 def parse_availability(text, now=None):
     """Bare times mean PM; 'after' checks until midnight, 'at' for one hour."""
-    text = text.lower().strip().rstrip(".?!,")
+    text = normalize_time_text(text)
     match = re.search(
         r"\b(?P<mode>after|at)\s+(?P<hour>\d{1,2}|one|two|three|four|five|six)"
         r"(?::(?P<minute>\d{2}))?\s*(?P<ampm>am|pm)?\b", text
