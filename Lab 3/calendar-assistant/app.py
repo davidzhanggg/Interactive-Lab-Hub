@@ -14,40 +14,82 @@ from calendar_client import (
 )
 
 from intent_parser import parse_intent, parse_create_event
+from speech import listen, speak
 
 
 pending_event = None
 last_event = None
 
-print(
+
+# --------------------------------------------------
+# Print AND speak assistant responses
+# --------------------------------------------------
+def reply(text):
+    print("Assistant:", text)
+    speak(text)
+
+
+# --------------------------------------------------
+# Opening
+# --------------------------------------------------
+opening = (
     "Hello! I am your personal calendar assistant. "
     "I can help you check your schedule, find free time, "
     "and create new events. How can I help you today?"
 )
 
+reply(opening)
+
 
 while True:
-    question = input("\nYou: ").strip().lower()
+
+    print("\nYou: ", end="", flush=True)
+    # --------------------------------------------------
+    # Listen to the user
+    # --------------------------------------------------
+    raw_question = listen().strip()
+    
+    # Show what Whisper recognized after "You:"
+    print(raw_question)
+
+    # Normalize it
+    question = raw_question.lower().rstrip(".?!,")
+
+    if not question:
+        reply("Sorry, I didn't hear anything.")
+        continue
 
     # --------------------------------------------------
     # 1. Handle confirmation for a pending event
     # --------------------------------------------------
     if pending_event is not None:
 
-        if question in ["yes", "yeah", "yep", "sure", "ok", "okay",]:
-            create_event(pending_event["title"], pending_event["start"], pending_event["end"],)
+        if question in [
+            "yes", "yeah", "yep", "sure", "ok", "okay"
+        ]:
+            create_event(
+                pending_event["title"],
+                pending_event["start"],
+                pending_event["end"],
+            )
 
-            print("Assistant:", f"Done. I created {pending_event['title']}.")
+            reply(
+                f"Done. I created {pending_event['title']}."
+            )
+
             pending_event = None
             continue
 
-        elif question in ["no", "nope", "cancel", "never mind",]:
-            print("Assistant:", "Okay, I won't create it.")
+        elif question in [
+            "no", "nope", "cancel", "never mind"
+        ]:
+            reply("Okay, I won't create it.")
+
             pending_event = None
             continue
 
         else:
-            print("Assistant:", "Please say yes or no.")
+            reply("Please say yes or no.")
             continue
 
     # --------------------------------------------------
@@ -62,7 +104,7 @@ while True:
     if intent == "today_events":
         events = get_today_events()
 
-        print("Assistant:", format_events(events))
+        reply(format_events(events))
 
         if len(events) == 1:
             last_event = events[0]
@@ -74,7 +116,8 @@ while True:
     # --------------------------------------------------
     elif intent == "tomorrow_events":
         events = get_tomorrow_events()
-        print("Assistant:", format_events(events))
+
+        reply(format_events(events))
 
         if len(events) == 1:
             last_event = events[0]
@@ -88,10 +131,22 @@ while True:
         event = get_next_event()
 
         if event:
-            print("Assistant:", format_events([event], include_date=True, include_location=True))
+            reply(
+                format_events(
+                    [event],
+                    include_date=True,
+                    include_location=True
+                )
+            )
+
             last_event = event
+
         else:
-            print("Assistant:", "You don't have any upcoming events.")
+            reply(
+                "You don't have any upcoming events."
+            )
+
+            last_event = None
 
     # --------------------------------------------------
     # Location
@@ -99,16 +154,28 @@ while True:
     elif intent == "event_location":
 
         if last_event:
-            title = friendly_title(last_event.get("summary", "Untitled event"))
+            title = friendly_title(
+                last_event.get(
+                    "summary",
+                    "Untitled event"
+                )
+            )
+
             location = last_event.get("location")
 
             if location:
-                print("Assistant:", f"{title} is in {location}.")
+                reply(
+                    f"{title} is in {location}."
+                )
             else:
-                print("Assistant:", f"There is no location listed for {title}.")
+                reply(
+                    f"There is no location listed for {title}."
+                )
 
         else:
-            print("Assistant:", "I'm not sure which event you're asking about.")
+            reply(
+                "I'm not sure which event you're asking about."
+            )
 
     # --------------------------------------------------
     # Free hours this week
@@ -116,14 +183,21 @@ while True:
     elif intent == "free_hours_week":
         hours = get_free_hours_this_week()
 
-        print("Assistant:", f"You have approximately {hours:.1f} free hours this week between 9 AM and 9 PM.")
+        reply(
+            f"You have approximately {hours:.1f} "
+            "free hours this week between 9 AM and 9 PM."
+        )
 
     # --------------------------------------------------
     # When am I free today/tomorrow?
     # --------------------------------------------------
     elif intent == "free_intervals_day":
+
         if result["day"] == "tomorrow":
-            day = (datetime.date.today() + datetime.timedelta(days=1))
+            day = (
+                datetime.date.today()
+                + datetime.timedelta(days=1)
+            )
             day_name = "tomorrow"
 
         else:
@@ -133,20 +207,27 @@ while True:
         free_intervals = get_free_intervals_for_day(day)
 
         if not free_intervals:
-            print("Assistant:", f"You don't have any free time {day_name} between 9 AM and 9 PM.")
+            reply(
+                f"You don't have any free time {day_name} "
+                "between 9 AM and 9 PM."
+            )
 
         else:
             formatted_intervals = []
 
             for start, end in free_intervals:
-                formatted_intervals.append(f"{start.strftime('%-I:%M %p')} to {end.strftime('%-I:%M %p')}")
+                formatted_intervals.append(
+                    f"{start.strftime('%-I:%M %p')} "
+                    f"to {end.strftime('%-I:%M %p')}"
+                )
 
-            print(
-                "Assistant:",
+            response = (
                 f"You are free {day_name} from "
                 + ", ".join(formatted_intervals)
                 + "."
             )
+
+            reply(response)
 
     # --------------------------------------------------
     # Create event
@@ -156,19 +237,27 @@ while True:
         event_data = parse_create_event(question)
 
         if event_data is None:
-            print("Assistant: Sorry, I couldn't understand the event details.")
+            reply(
+                "Sorry, I couldn't understand the event details."
+            )
+            continue
+
+        if event_data.get("error") == "past_time":
+            reply(
+                "That time has already passed."
+            )
             continue
 
         start = event_data["start"]
         end = event_data["end"]
 
         if is_free(start, end):
+
             # Do NOT create it yet.
             # Wait until the user confirms.
             pending_event = event_data
 
-            print(
-                "Assistant:",
+            reply(
                 f"You're free from "
                 f"{start.strftime('%-I:%M %p')} to "
                 f"{end.strftime('%-I:%M %p')}. "
@@ -177,17 +266,22 @@ while True:
             )
 
         else:
-            print("Assistant: You already have something scheduled during that time.")
+            reply(
+                "You already have something scheduled "
+                "during that time."
+            )
 
     # --------------------------------------------------
     # Exit
     # --------------------------------------------------
     elif intent == "exit":
-        print("Assistant: Goodbye!")
+        reply("Goodbye!")
         break
 
     # --------------------------------------------------
     # Unknown
     # --------------------------------------------------
     else:
-        print("Assistant: Sorry, I didn't understand that.")
+        reply(
+            "Sorry, I didn't understand that."
+        )
