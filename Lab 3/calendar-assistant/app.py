@@ -13,13 +13,15 @@ from calendar_client import (
     friendly_title,
 )
 
-from intent_parser import parse_intent, parse_create_event
+from intent_parser import parse_intent, parse_create_event, parse_availability, TIMEZONE
 from speech import listen, speak
 from ui import show_ready, show_listening, show_processing, show_speaking
 
 
 pending_event = None
 last_event = None
+last_events = []
+awaiting_location = False
 
 
 # --------------------------------------------------
@@ -48,7 +50,6 @@ reply(opening)
 
 while True:
 
-    print("\nYou: ", end="", flush=True)
     # --------------------------------------------------
     # Listen to the user
     # --------------------------------------------------
@@ -57,8 +58,8 @@ while True:
         on_processing=show_processing,
     ).strip()
     
-    # Show what Whisper recognized after "You:"
-    print(raw_question)
+    # Show the transcript after speech.py's "Listening..." message.
+    print("You:", raw_question)
 
     # Normalize it
     question = raw_question.lower().rstrip(".?!,")
@@ -68,6 +69,27 @@ while True:
         continue
 
     # --------------------------------------------------
+    # Resolve a location clarification against the events just discussed.
+    if awaiting_location:
+        if question in ["cancel", "never mind", "no"]:
+            awaiting_location = False
+            reply("Okay.")
+            continue
+        if parse_intent(question)["intent"] == "exit":
+            reply("Goodbye!")
+            break
+        matches = [e for e in last_events if
+                   friendly_title(e.get("summary", "Untitled event")).lower() in question
+                   or question in friendly_title(e.get("summary", "Untitled event")).lower()]
+        if len(matches) == 1:
+            last_event = matches[0]
+            awaiting_location = False
+            reply(f"{friendly_title(last_event.get('summary', 'Untitled event'))}: {format_location(last_event)}")
+        else:
+            reply("Please say one of these event names: " + ", ".join(
+                friendly_title(e.get("summary", "Untitled event")) for e in last_events) + ". Or say cancel.")
+        continue
+
     # 1. Handle confirmation for a pending event
     # --------------------------------------------------
     if pending_event is not None:
@@ -75,6 +97,14 @@ while True:
         if question in [
             "yes", "yeah", "yep", "sure", "ok", "okay"
         ]:
+            if pending_event["start"] <= datetime.datetime.now(TIMEZONE):
+                pending_event = None
+                reply("That time has already passed. Please choose a future time.")
+                continue
+            if not is_free(pending_event["start"], pending_event["end"]):
+                pending_event = None
+                reply("That time is now busy. Please choose another time.")
+                continue
             create_event(
                 pending_event["title"],
                 pending_event["start"],
@@ -112,6 +142,7 @@ while True:
     if intent == "today_events":
         events = get_today_events()
 
+        last_events = events
         reply(format_events(events))
 
         if len(events) == 1:
@@ -125,6 +156,7 @@ while True:
     elif intent == "tomorrow_events":
         events = get_tomorrow_events()
 
+        last_events = events
         reply(format_events(events))
 
         if len(events) == 1:
@@ -138,6 +170,7 @@ while True:
     elif intent == "next_event":
         event = get_next_event()
 
+        last_events = [event] if event else []
         if event:
             reply(
                 format_events(
@@ -161,29 +194,37 @@ while True:
     # --------------------------------------------------
     elif intent == "event_location":
 
-        if last_event:
-            title = friendly_title(
-                last_event.get(
-                    "summary",
-                    "Untitled event"
-                )
-            )
-
-            location = last_event.get("location")
-
-            if location:
-                reply(
-                    f"{title} is in {location}."
-                )
-            else:
-                reply(
-                    f"There is no location listed for {title}."
-                )
-
+        if "next" in question:
+            last_event = get_next_event()
+            last_events = [last_event] if last_event else []
         else:
-            reply(
-                "I'm not sure which event you're asking about."
-            )
+            matches = [e for e in last_events if
+                       friendly_title(e.get("summary", "Untitled event")).lower() in question]
+            if len(matches) == 1:
+                last_event = matches[0]
+            elif question not in ["where is it", "where is that", "where is that event", "what is its location"]:
+                last_event = None
+
+        if last_event:
+            reply(f"{friendly_title(last_event.get('summary', 'Untitled event'))}: {format_location(last_event)}")
+        elif last_events:
+            awaiting_location = True
+            reply("Which event do you mean? Say its name: " + ", ".join(
+                friendly_title(e.get("summary", "Untitled event")) for e in last_events) + ".")
+        else:
+            reply("Which event do you mean? Ask about today's schedule, tomorrow's schedule, or your next event first, then ask for its location.")
+
+    elif intent == "check_availability":
+        interval = parse_availability(question)
+        if interval.get("error"):
+            reply("Please choose a future time, such as: Am I free tomorrow after 6 PM?")
+            continue
+        start, end = interval["start"], interval["end"]
+        window = f"{start.strftime('%A at %-I:%M %p')} until {end.strftime('%A at %-I:%M %p')}"
+        if is_free(start, end):
+            reply(f"Yes, you are free from {window}.")
+        else:
+            reply(f"You have something scheduled between {window}.")
 
     # --------------------------------------------------
     # Free hours this week
@@ -203,13 +244,13 @@ while True:
 
         if result["day"] == "tomorrow":
             day = (
-                datetime.date.today()
+                datetime.datetime.now(TIMEZONE).date()
                 + datetime.timedelta(days=1)
             )
             day_name = "tomorrow"
 
         else:
-            day = datetime.date.today()
+            day = datetime.datetime.now(TIMEZONE).date()
             day_name = "today"
 
         free_intervals = get_free_intervals_for_day(day)
@@ -246,7 +287,8 @@ while True:
 
         if event_data is None:
             reply(
-                "Sorry, I couldn't understand the event details."
+                "Please include a duration, event name, today or tomorrow, and a time with AM or PM. "
+                "For example: Schedule a two-hour study session tomorrow at 6 PM."
             )
             continue
 
@@ -254,6 +296,10 @@ while True:
             reply(
                 "That time has already passed."
             )
+            continue
+
+        if event_data.get("error"):
+            reply("Please use a valid time from 1 to 12 AM or PM, and a duration between 1 and 24 hours.")
             continue
 
         start = event_data["start"]
@@ -266,7 +312,7 @@ while True:
             pending_event = event_data
 
             reply(
-                f"You're free from "
+                f"You're free on {start.strftime('%A, %B %-d')} from "
                 f"{start.strftime('%-I:%M %p')} to "
                 f"{end.strftime('%-I:%M %p')}. "
                 f"Would you like me to create "

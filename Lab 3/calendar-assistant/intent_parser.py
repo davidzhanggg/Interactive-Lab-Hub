@@ -15,7 +15,7 @@ NUMBER_WORDS = {
 
 
 def parse_intent(text):
-    text = text.lower().strip()
+    text = text.lower().strip().rstrip(".?!,")
 
     # Exit
     if text in ["quit", "exit", "bye", "goodbye", "that's all", "thats all"]:
@@ -32,10 +32,13 @@ def parse_intent(text):
 
     # Creating an event should come before today/tomorrow,
     # because "schedule something tomorrow" contains "tomorrow".
-    if ("schedule" in text or "create" in text or "add" in text):
+    if re.match(r"^(?:(?:please|can you|could you|help me)\s+)*(?:schedule|create|add)\b", text):
         return {
             "intent": "create_event"
         }
+
+    if "free" in text and re.search(r"\b(?:after|at)\b", text):
+        return {"intent": "check_availability", "text": text}
 
     # Weekly free time
     if ("free" in text and "week" in text
@@ -94,7 +97,7 @@ def parse_intent(text):
     }
 
 
-def parse_create_event(text):
+def parse_create_event(text, now=None):
     """
     Example supported input:
 
@@ -103,7 +106,7 @@ def parse_create_event(text):
     Add a 2 hour meeting today at 4 PM
     """
 
-    text = text.lower().strip()
+    text = text.lower().strip().rstrip(".?!,")
 
     pattern = (
         r"(?:schedule|create|add)"
@@ -134,7 +137,8 @@ def parse_create_event(text):
         duration_hours = NUMBER_WORDS[duration_text]
 
     # Day
-    today = datetime.date.today()
+    now = now or datetime.datetime.now(TIMEZONE)
+    today = now.astimezone(TIMEZONE).date()
 
     if match.group("day") == "tomorrow":
         day = today + datetime.timedelta(days=1)
@@ -145,6 +149,11 @@ def parse_create_event(text):
     hour = int(match.group("hour"))
     minute = int(match.group("minute") or 0)
     ampm = match.group("ampm")
+
+    if not 1 <= hour <= 12 or not 0 <= minute <= 59:
+        return {"error": "invalid_time"}
+    if not 1 <= duration_hours <= 24:
+        return {"error": "invalid_duration"}
 
     if ampm == "pm" and hour != 12:
         hour += 12
@@ -158,6 +167,9 @@ def parse_create_event(text):
         tzinfo=TIMEZONE
     )
 
+    if start <= now:
+        return {"error": "past_time"}
+
     end = start + datetime.timedelta(hours=duration_hours)
 
     return {
@@ -165,3 +177,31 @@ def parse_create_event(text):
         "start": start,
         "end": end,
     }
+
+
+def parse_availability(text, now=None):
+    """Bare times mean PM; 'after' checks until midnight, 'at' for one hour."""
+    text = text.lower().strip().rstrip(".?!,")
+    match = re.search(
+        r"\b(?P<mode>after|at)\s+(?P<hour>\d{1,2}|one|two|three|four|five|six)"
+        r"(?::(?P<minute>\d{2}))?\s*(?P<ampm>am|pm)?\b", text
+    )
+    if not match:
+        return {"error": "missing_time"}
+    raw_hour = match.group("hour")
+    hour = int(raw_hour) if raw_hour.isdigit() else NUMBER_WORDS[raw_hour]
+    minute = int(match.group("minute") or 0)
+    if not 1 <= hour <= 12 or not 0 <= minute <= 59:
+        return {"error": "invalid_time"}
+    ampm = match.group("ampm") or "pm"
+    hour = hour % 12 + (12 if ampm == "pm" else 0)
+    now = now or datetime.datetime.now(TIMEZONE)
+    day = now.astimezone(TIMEZONE).date()
+    if "tomorrow" in text:
+        day += datetime.timedelta(days=1)
+    start = datetime.datetime.combine(day, datetime.time(hour, minute), tzinfo=TIMEZONE)
+    if start <= now:
+        return {"error": "past_time"}
+    end = (datetime.datetime.combine(day + datetime.timedelta(days=1), datetime.time.min, tzinfo=TIMEZONE)
+           if match.group("mode") == "after" else start + datetime.timedelta(hours=1))
+    return {"start": start, "end": end, "mode": match.group("mode")}
