@@ -334,6 +334,13 @@ The system should:
 
 *Document how the system works.*
 
+My system is a Voice Calendar Assistant running on a Raspberry Pi and connected to my Cornell Google Calendar through the calendar API. It lets users check their schedule for today, tomorrow, or a named weekday, ask about their next event, find available time, and create new events through speech. For weekday questions, it considers the closest occurrence of that day and includes the date in its response to make the interpretation clear, e.g. asking "What do I have next Thursday," will result in the system looking for Thursday October 8th.
+
+The system uses a microphone to capture speech and waits for around 1 second of silence before ending the user's turn to speak. It transcribes the recording using Whisper, retrieves the relevant calendar information, and answers the user using Piper. The Raspberry Pi screen provides visual feedback throughout the interaction: green for Listening, orange for Processing, and blue for Speaking.
+
+The assistant also helps users recover from misunderstandings. If an event creation request is missing information, it explains that the user must provide a duration, event name, today or tomorrow, and a time with AM or PM. It rejects past or invalid times, checks for scheduling conflicts, and asks for confirmation before creating the event. When the user confirms, it checks availability again before saving it.
+The assistant supports location follow-ups for events from the schedule it has just discussed. If several events could match, it asks the user to specify the event name. It can also calculate free intervals and the total number of free hours during the current week, using a daily window of 9 AM to 9 PM.
+
 *Include videos or screencaptures of both the system and the controller.*
 
 ## Test the system
