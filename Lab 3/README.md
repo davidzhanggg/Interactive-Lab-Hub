@@ -343,6 +343,10 @@ The assistant supports location follow-ups for events from the schedule it has j
 
 *Include videos or screencaptures of both the system and the controller.*
 
+The final demo video of the system and controller can be seen in this link:
+
+https://drive.google.com/file/d/1VcJ_lYOBGxHiKlgDbO7BP5eh8HWUhVi-/view?usp=sharing
+
 ## Test the system
 
 Try to get at least two people to interact with your system. (Ideally, you would inform them that there is a wizard *after* the interaction, but we recognize that can be hard.)
