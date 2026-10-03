@@ -1,6 +1,7 @@
 import datetime
 
 from calendar_client import (
+    get_events_for_day,
     get_today_events,
     get_tomorrow_events,
     get_next_event,
@@ -163,6 +164,17 @@ while True:
             last_event = events[0]
         else:
             last_event = None
+
+    # --------------------------------------------------
+    # Schedule for a named weekday
+    # --------------------------------------------------
+    elif intent == "day_events":
+        day = result["day"]
+        events = get_events_for_day(day)
+        last_events = events
+        last_event = events[0] if len(events) == 1 else None
+        date_label = day.strftime("%A, %B %-d")
+        reply(f"On {date_label}, {format_events(events)}")
 
     # --------------------------------------------------
     # Next event

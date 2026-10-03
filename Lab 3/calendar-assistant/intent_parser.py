@@ -3,6 +3,20 @@ import re
 from zoneinfo import ZoneInfo
 
 TIMEZONE = ZoneInfo("America/New_York")
+WEEKDAYS = ("monday", "tuesday", "wednesday", "thursday", "friday", "saturday", "sunday")
+
+
+def parse_weekday_date(text, now=None):
+    """Bare weekdays include today; 'next' weekdays are strictly in the future."""
+    match = re.search(r"\b(?:(next|this)\s+)?(" + "|".join(WEEKDAYS) + r")\b", text.lower())
+    if not match:
+        return None
+    now = now or datetime.datetime.now(TIMEZONE)
+    today = now.astimezone(TIMEZONE).date()
+    days_ahead = (WEEKDAYS.index(match.group(2)) - today.weekday()) % 7
+    if match.group(1) == "next" and days_ahead == 0:
+        days_ahead = 7
+    return today + datetime.timedelta(days=days_ahead)
 
 NUMBER_WORDS = {
     "one": 1,
@@ -14,7 +28,7 @@ NUMBER_WORDS = {
 }
 
 
-def parse_intent(text):
+def parse_intent(text, now=None):
     text = text.lower().strip().rstrip(".?!,")
 
     # Exit
@@ -79,6 +93,12 @@ def parse_intent(text):
         return {
             "intent": "next_event"
         }
+
+    # Weekday schedule requests. Availability and creation keep their own intents.
+    if "free" not in text:
+        day = parse_weekday_date(text, now)
+        if day is not None:
+            return {"intent": "day_events", "day": day}
 
     # Tomorrow
     if "tomorrow" in text:

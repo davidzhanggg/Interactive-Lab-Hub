@@ -8,11 +8,26 @@ from types import ModuleType
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
-from intent_parser import TIMEZONE, parse_intent, parse_create_event, parse_availability
+from intent_parser import TIMEZONE, parse_intent, parse_create_event, parse_availability, parse_weekday_date
 
 
 class ParserTests(unittest.TestCase):
     now = datetime.datetime(2026, 10, 3, 10, tzinfo=TIMEZONE)
+
+    def test_weekday_resolution(self):
+        monday = datetime.datetime(2026, 10, 5, 10, tzinfo=TIMEZONE)
+        self.assertEqual(parse_weekday_date("on Monday", monday), datetime.date(2026, 10, 5))
+        self.assertEqual(parse_weekday_date("next Monday", monday), datetime.date(2026, 10, 12))
+        self.assertEqual(parse_weekday_date("on Thursday", monday), datetime.date(2026, 10, 8))
+        self.assertEqual(parse_weekday_date("on Sunday", monday), datetime.date(2026, 10, 11))
+        sunday = monday + datetime.timedelta(days=6)
+        self.assertEqual(parse_weekday_date("Monday", sunday), datetime.date(2026, 10, 12))
+        year_end = datetime.datetime(2026, 12, 31, 10, tzinfo=TIMEZONE)
+        self.assertEqual(parse_weekday_date("Friday", year_end), datetime.date(2027, 1, 1))
+        for weekday in ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]:
+            self.assertEqual(parse_intent(f"What's my schedule on {weekday}?", monday)["intent"], "day_events")
+        self.assertEqual(parse_intent("Schedule a meeting on Monday", monday)["intent"], "create_event")
+
 
     def test_schedule_queries_and_commands(self):
         for phrase in ["What's my schedule today?", "Show my schedule today", "What is on my schedule today"]:
@@ -43,9 +58,10 @@ class ParserTests(unittest.TestCase):
 class ConversationTests(unittest.TestCase):
     def run_dialogue(self, questions, events):
         calendar = ModuleType("calendar_client")
-        for name in ["get_today_events", "get_tomorrow_events", "get_next_event", "get_free_hours_this_week", "get_free_intervals_for_day", "is_free", "create_event", "format_events", "format_location", "friendly_title"]:
+        for name in ["get_events_for_day", "get_today_events", "get_tomorrow_events", "get_next_event", "get_free_hours_this_week", "get_free_intervals_for_day", "is_free", "create_event", "format_events", "format_location", "friendly_title"]:
             setattr(calendar, name, Mock())
         calendar.get_today_events.return_value = events
+        calendar.get_events_for_day.return_value = events
         calendar.get_next_event.return_value = events[0] if events else None
         calendar.format_events.return_value = "Your schedule."
         calendar.friendly_title.side_effect = lambda title: title
@@ -60,6 +76,17 @@ class ConversationTests(unittest.TestCase):
         with patch.dict(sys.modules, calendar_client=calendar, speech=speech, ui=ui):
             runpy.run_path(str(ROOT / "app.py"))
         return calendar, [call.args[0] for call in speech.speak.call_args_list]
+
+    def test_weekday_schedule_and_location(self):
+        calendar, replies = self.run_dialogue(
+            ["What do I have on Thursday?", "Where is it?", "Goodbye"],
+            [{"summary": "Meeting", "location": "Library"}],
+        )
+        calendar.get_events_for_day.assert_called_once()
+        day = calendar.get_events_for_day.call_args.args[0]
+        self.assertEqual(day.weekday(), 3)
+        self.assertIn(f"On {day.strftime('%A, %B %-d')}, Your schedule.", replies)
+        self.assertIn("Meeting: Library", replies)
 
     def test_location_clarification(self):
         events = [{"summary": "Study session", "location": "Library"}, {"summary": "Team meeting", "location": "Room 141"}]
