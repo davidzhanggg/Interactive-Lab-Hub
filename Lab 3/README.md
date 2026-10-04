@@ -345,7 +345,7 @@ The assistant supports location follow-ups for events from the schedule it has j
 
 The final demo video of the system and controller can be seen in this link:
 
-https://drive.google.com/file/d/1VcJ_lYOBGxHiKlgDbO7BP5eh8HWUhVi-/view?usp=sharing
+https://drive.google.com/file/d/17ThzoYpmIJCY_OWZ1N20JfxNyQmVHjOy/view?usp=sharing
 
 ## Test the system
 
