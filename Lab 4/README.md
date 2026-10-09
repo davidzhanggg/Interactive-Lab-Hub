@@ -18,7 +18,7 @@
 
 ## Lab Overview
 Team: <canvas group name>  
-Members: Full Name (netid, github-handle), ...  
+Members: Ziqiao Gao (zg375, zg375), ...  
 Clock name: <name>
 
 
@@ -286,7 +286,8 @@ As you develop your Feast Automata concept, consider where the sensor and actuat
 
 **\*\*\*Draw 5 sketches that explore different physical arrangements for your sensing and actuation.\*\*\***
 
-
+![Ideas1](Ideas1.jpg)
+![Ideas2](Ideas2.jpg)
 
 
 **\*\*\*What questions do these sketches raise? What do you need to physically prototype to answer them?\*\*\***
