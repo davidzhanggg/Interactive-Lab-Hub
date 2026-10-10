@@ -18,7 +18,7 @@
 
 ## Lab Overview
 Team: <canvas group name>  
-Members: Ziqiao Gao (zg375, zg375), ...  
+Members: Xiaowei David Zhang Chen (xz2229, davidzhanggg), Ziqiao Gao (zg375, zg375)  
 Clock name: <name>
 
 
