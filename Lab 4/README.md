@@ -286,6 +286,12 @@ As you develop your Feast Automata concept, consider where the sensor and actuat
 
 **\*\*\*Draw 5 sketches that explore different physical arrangements for your sensing and actuation.\*\*\***
 
+1. Tea Bag Lifter: A button activates a servo connected to the tea bag string, lifting the tea bag out of the mug when the user is ready.
+2. Instant Noodle Cooler: A proximity sensor detects when a bowl of noodles is placed nearby and activates a small fan to cool the food.
+3. Food Guardian: A proximity sensor detects when a hand approaches the food and triggers a servo-controlled arm to move in front of it and protect 
+4. Joystick Vending Machine: The user selects one of four snacks using the joystick directions, then presses the joystick to confirm and dispense the chosen item.
+5. Rotating Sushi Carousel: A button controls a servo that rotates a platform between three sushi serving positions, bringing the next piece toward the user.
+
 ![Ideas1](Ideas1.jpg)
 ![Ideas2](Ideas2.jpg)
 
@@ -302,6 +308,15 @@ We pick the Rotating Sushi Carousel because it conbines a simple and intuitive i
 Build a cardboard or other low-fidelity physical prototype of your design.
 
 **\*\*\*Document your rough prototype with photos and/or video.\*\*\***
+
+For our rough prototype, we cut cardboard to create the cross-shaped rotating platform and used paper circles to represent the plates. Instead of using real sushi, we placed small snacks on the plates to simulate the servings. We also included the servo motor and button in the prototype so the setup would more closely represent the intended interaction and help us test the physical arrangement of the final design.
+
+![Prototype](Prototype.jpg)
+![Prototype1](Prototype1.jpg)
+![Prototype2](Prototype2.jpg)
+
+A demo video of our prototype can be seen in:
+https://drive.google.com/file/d/107zFRFPnj3CcGJ7PWsL-9535d5mnNfVf/view?usp=sharing
 
 ---
 
