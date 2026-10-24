@@ -137,6 +137,7 @@ Then press q to quit and run it again with a flag. Each one changes a single thi
 \*\*\***Include a short video or screenshots of the person detection. Write down three situations where it did not see you, or saw a person who was not there, and what you think the cause was.**\*\*\*
 
 A short video of the person detection can be seen here: https://drive.google.com/file/d/1II1FLSGtrvXep6s0cweG1ObZwnJPvIXq/view?usp=sharing
+
 We tested three different situations to test the reliability of the person detection:
 - When turning off the lights, the model had more difficulty detecting people, as the camera could not capture enough visual details to reliably recognize human features.
 - When moving partially outside the camera frame, the model sometimes failed to recognize the person. This could be because there was not enough information about the person's body shape for accurate detection.
