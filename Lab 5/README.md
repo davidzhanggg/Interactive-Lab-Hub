@@ -136,6 +136,14 @@ Then press q to quit and run it again with a flag. Each one changes a single thi
 
 \*\*\***Include a short video or screenshots of the person detection. Write down three situations where it did not see you, or saw a person who was not there, and what you think the cause was.**\*\*\*
 
+A short video of the person detection can be seen here: https://drive.google.com/file/d/1II1FLSGtrvXep6s0cweG1ObZwnJPvIXq/view?usp=sharing
+We tested three different situations to test the reliability of the person detection:
+- When turning off the lights, the model had more difficulty detecting people, as the camera could not capture enough visual details to reliably recognize human features.
+- When moving partially outside the camera frame, the model sometimes failed to recognize the person. This could be because there was not enough information about the person's body shape for accurate detection.
+- When showing a photograph of a person on a phone screen, the model could detect the person in the image as if someone were physically present. This happens because YOLO recognizes visual patterns rather than determining whether a person is physically present in the room.
+
+![partb](pics/partb.jpg)
+
 
 ## Part C. 
 ### See more: hands and pose with MediaPipe
@@ -163,7 +171,7 @@ Consider how you might use this position based approach to create an interaction
 
 \*\*\***Include a screenshot or short video of the hand pose demo, and write how you might use face, hand or body pose tracking in your observant system.**\*\*\*
 
-We tested both the volume control and the Quiet Coyote functions of the script. Some screenshots of these interactions are attached below, and a short video demo can be seen here: https://drive.google.com/file/d/1q-ka9csIbhSIjl2mN-9539Uwh6z9D97j/view?usp=sharing
+We tested both the volume control and the Quiet Coyote functions of the script. Some screenshots of these interactions are attached below, and a short video demo can be seen here: https://drive.google.com/file/d/1wnjsfQrUTy4oALpYatzacbZTKukACG33/view?usp=sharing
 
 One possible application would be using the webcam to monitor the user's body posture. So it tracks the user shoulders, neck and torso positioning, and the device detects whether the user is sitting in a bad posture, so if the user leans forward for an extended period, the device reminds them to correct their posture. Another possible interaction would be playing instruments using hand tracking, so different finger positionings could correspond to different musical notes. By this way, users can play music by just moving their fingers in front of a camera.  
 
