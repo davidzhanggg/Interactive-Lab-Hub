@@ -69,6 +69,10 @@ This readme.md page in your own repository should be edited to include the work 
 # Part 1
 
 ## Part A. 
+
+<details>
+	<summary><strong>Part A Details (Click to Expand)</strong></summary>
+	
 ### Set up your Pi for on-device AI
 
 Create a virtual environment and install the requirements. They include `ultralytics` (YOLO), which pulls in torch, so this takes a while:
@@ -134,6 +138,8 @@ pi@raspberrypi:~ $ ollama list
 | `qwen3.5:0.8b` | ~1.3 GB | text **and images**; the one we use in this lab |
 | `qwen3:0.6b` | ~0.5 GB | text only, smaller and faster (~16 tokens/s on a Pi 5) |
 
+</details>
+
 \*\*\***Include a screenshot of `ollama list` showing your models.**\*\*\*
 
 ![OllamaList](pics/OllamaList.png)
@@ -141,6 +147,10 @@ pi@raspberrypi:~ $ ollama list
 ![Snap](pics/snapResult.jpg)
 
 ## Part B. 
+
+<details>
+	<summary><strong>Part B Details (Click to Expand)</strong></summary>
+	
 ### See: recognize people in real time with YOLO
 
 YOLO is an *object detector*: it finds every person, cup, cat and so on (the 80 [COCO](https://cocodataset.org/) classes), draws a box around each, and gives a confidence. For an observant system that is exactly what you want: *how many*, *where*, *how sure*.
@@ -162,6 +172,8 @@ Then press q to quit and run it again with a flag. Each one changes a single thi
 (.venv) pi@raspberrypi:~/Interactive-Lab-Hub/Lab 5 $ python yolo_person.py --headless     # no window, only the printed readings: how it runs over ssh, and at night
 ```
 
+</details> 
+
 \*\*\***Include a short video or screenshots of your experiments with the person detection. Write down three situations where it did not see you, or saw a person who was not there, and what you think the cause was.**\*\*\*
 
 
@@ -176,6 +188,10 @@ We tested three different situations to test the reliability of the person detec
 
 
 ## Part C. 
+
+<details>
+	<summary><strong>Part C Details (Click to Expand)</strong></summary>
+	
 ### See more: hands and pose with MediaPipe
 
 YOLO tells you that a person is there. Google's [MediaPipe](https://mediapipe.dev/) tells you what their hands and body are doing: face, hand and body pose detection, fast on the Pi.
@@ -199,6 +215,8 @@ Try the two main features of this script: 1) pinching for percentage control (th
 
 Consider how you might use this position based approach to create an interaction, and write how you might use it on either face, hand or body pose tracking.
 
+</details>
+
 \*\*\***Include a screenshot or short video of the hand pose demo, and write how you might use face, hand or body pose tracking in your observant system.**\*\*\*
 
 We tested both the volume control and the Quiet Coyote functions of the script. Some screenshots of these interactions are attached below, and a short video demo can be seen here: https://drive.google.com/file/d/1wnjsfQrUTy4oALpYatzacbZTKukACG33/view?usp=sharing
@@ -210,6 +228,10 @@ One possible application would be using the webcam to monitor the user's body po
 
 
 ## Part D. 
+
+<details>
+	<summary><strong>Part D Details (Click to Expand)</strong></summary>
+	
 ### Reason: run Qwen on the Pi with Ollama
 
 Talk to the model in the terminal first. Qwen3 models "think" before they answer, which is slow on a Pi, so turn it off. Then ask about something you can check:
@@ -239,12 +261,16 @@ Things in the [Ollama API](https://github.com/ollama/ollama/blob/main/docs/api.m
 
 A 0.8B model is slow and sometimes wrong. It will invent events that are not in the data and agree with a wrong premise. Give it the data, keep its job narrow, and decide what the device does when the model is unsure.
 
+</details>
+
 \*\*\***Ask Qwen three questions to answer. Paste the questions, the answers and how long each took. Try one of them with `qwen3:0.6b` and compare.**\*\*\*
 
 ### Test 1: Historical Question (Qwen3.5:0.8b)
 
 **Question:** Tell me a bit about the history of Roosevelt Island.
+
 **Model:** `qwen3.5:0.8b`
+
 **Response:**
 > Roosevelt Island is an island located on Manhattan, New York City, originally built as part of the Great Wall of Manhattan to protect the harbor from pirates and storms. It was first developed in 1857 by John Quincy Adams and later became a significant landmark for American immigration and political history during the late 19th century.
 
@@ -284,6 +310,10 @@ Overall, the experiments demonstrated the trade-offs between response speed, fac
 
 
 ## Part E. 
+
+<details>
+	<summary><strong>Part E Details (Click to Expand)</strong></summary>
+	
 ### Connect: from YOLO readings to Qwen reasoning
 
 An observant system is a pipeline: a **detector** turns pixels into boxes, an **interpreter** turns boxes into readings in words ("one person, left, close"), the readings pile up in a **log**, and a **reasoner** answers a question about the log. The language model never sees pixels, only the words you chose in the interpreter. That makes the interpreter the most important design decision in the system.
@@ -314,6 +344,8 @@ asking Qwen...
 Qwen (18.4 s):
 One person came in from the right, moved close to the camera, and left after about half a minute. ...
 ```
+
+</details>
 
 ---
 
