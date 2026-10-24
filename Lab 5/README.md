@@ -162,6 +162,7 @@ Try the two main features of this script: 1) pinching for percentage control (th
 Consider how you might use this position based approach to create an interaction, and write how you might use it on either face, hand or body pose tracking.
 
 \*\*\***Include a screenshot or short video of the hand pose demo, and write how you might use face, hand or body pose tracking in your observant system.**\*\*\*
+
 We tested both the volume control and the Quiet Coyote functions of the script. Some screenshots of these interactions are attached below, and a short video demo can be seen here: https://drive.google.com/file/d/1q-ka9csIbhSIjl2mN-9539Uwh6z9D97j/view?usp=sharing
 
 One possible application would be using the webcam to monitor the user's body posture. So it tracks the user shoulders, neck and torso positioning, and the device detects whether the user is sitting in a bad posture, so if the user leans forward for an extended period, the device reminds them to correct their posture. Another possible interaction would be playing instruments using hand tracking, so different finger positionings could correspond to different musical notes. By this way, users can play music by just moving their fingers in front of a camera.  
