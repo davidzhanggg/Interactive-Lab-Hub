@@ -2,7 +2,7 @@
 
 **Team:**
 
-**Members:** Full Name (netid, github-handle), ...
+**Members:** Xiaowei David Zhang Chen (xz2229, davidzhanggg), Ziqiao Gao (zg375, zg375)
 
 **Project name:**
 
@@ -241,9 +241,46 @@ A 0.8B model is slow and sometimes wrong. It will invent events that are not in 
 
 \*\*\***Ask Qwen three questions to answer. Paste the questions, the answers and how long each took. Try one of them with `qwen3:0.6b` and compare.**\*\*\*
 
-<details>
-  Q&A here
-</details>
+### Test 1: Historical Question (Qwen3.5:0.8b)
+
+**Question:** Tell me a bit about the history of Roosevelt Island.
+**Model:** `qwen3.5:0.8b`
+**Response:**
+> Roosevelt Island is an island located on Manhattan, New York City, originally built as part of the Great Wall of Manhattan to protect the harbor from pirates and storms. It was first developed in 1857 by John Quincy Adams and later became a significant landmark for American immigration and political history during the late 19th century.
+
+**Response Time:** 65.6 seconds
+
+### Test 2: Same Question with a Smaller Model (Qwen3:0.6b)
+
+**Question:** Tell me a bit about the history of Roosevelt Island.
+
+**Model:** `qwen3:0.6b`
+
+**Response:**
+> Roosevelt Island, located in the United States, was established in the 19th century as a residential area for the Roosevelt family. It played a significant role in the development of New York City and became a hub for the American West. The island is known for its historic architecture and the Roosevelt family's influence on the region.
+
+**Response Time:** 43.5 seconds
+
+### Test 3: Image Understanding (Qwen3.5:0.8b)
+
+**Question:** What is in this photo?
+
+**Image:** `snap.jpg`
+
+**Model:** `qwen3.5:0.8b`
+
+**Response:**
+> This photo features a young Asian man with dark hair and glasses, wearing a blue shirt. He is looking directly at the camera with a slight smile. In the background, there are two white wall plates and a black water bottle on a table.
+
+**Response Time:** 99.0 seconds
+
+### Reflection
+
+The smaller Qwen3:0.6b model responded faster (43.5 seconds) than Qwen3.5:0.8b (65.6 seconds) when answering the same historical question. However, both models generated inaccurate historical information, showing that language models can produce confident but incorrect responses.
+
+For the image understanding task, Qwen3.5:0.8b took 99.0 seconds and generated a detailed description of the photo. Compared with YOLO's object detection, Qwen provided a more descriptive natural-language response.
+
+Overall, the experiments demonstrated the trade-offs between response speed, factual accuracy, and multimodal capabilities when running AI models locally on a Raspberry Pi.
 
 
 ## Part E. 
