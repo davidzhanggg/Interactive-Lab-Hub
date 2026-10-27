@@ -382,7 +382,7 @@ We brainstormed several ideas, including:
 
 We ended up choosing our third idea, AI Dream Machine, and this is our initial storyboard: 
 
-![Prototype1](prototype1.jpg)
+![InitialStoryboard](pics/storyboard1.jpg)
 
 ## Prep for Part 2
 
@@ -401,6 +401,9 @@ The hand-off: the person tells the device what to watch tonight, and the device 
 
 \*\*\***Describe the interaction before.**\*\*\*
 
+Before going to bed, the user uploads 50 photos of their week into a designated folder on the Raspberry Pi. Once the photos are ready, they press a physical button to activate the AI Dream Machine. The device acknowledges the hand-off with a short audio message: “Good night! I'll dream about your week.”
+The Raspberry Pi then begins processing the photos in the background using YOLO and Qwen. The user does not need to interact with the device again until the next morning. The entire hand-off takes less than 30 seconds, assuming the photos have already been transferred.
+
 ## Part H. 
 ### Incorporate the observant system
 
@@ -414,6 +417,11 @@ The Part E pipeline becomes the night shift. `overnight.py` runs your `interpret
 Fake a night first: run it for thirty seconds while you walk around, stop it, and run `morning.py` from Part I. When that looks right, run a real night. If your storyboard needs a sensor rather than the camera, swap in the Lab 4 example code and log its reading the same way.
 
 \*\*\***Screenshots or videos of the running system.**\*\*\*
+
+![Dream](pics/dream.png)
+![PicsForDream](pics/dreampics.png)
+
+
 
 ## Part I. 
 ### Design the interaction after
