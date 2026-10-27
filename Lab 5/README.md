@@ -375,6 +375,15 @@ Use storyboards and/or [Verplank diagrams](https://ccrma.stanford.edu/courses/25
 
 \*\*\***Insert ideas, sketches, Verplank diagrams and storyboards for your night-time interaction here.**\*\*\*
 
+We brainstormed several ideas, including:
+- **Notification tracker**: The user places their phone in front of the camera before sleeping, and the device will monitor when the screen lights up overnight. It will try to count and categorize notifications by app (e.g., WeChat, Calendar, etc). In the morning, it gives a summary of the notifications received and how frequently the phone was activated.
+- **Night digital processor**: The user uploads a folder of unsorted photos before going to bed. Overnight, YOLO analyzes the images and categorizes them based on detected objects, such as people, animals, food, or vehicles. In the morning, the user receives an organized photo collection and a summary of its contents.
+- **AI Dream Machine**: Before bed, the user uploads photos from their day, then YOLO analyzes them overnight and identifies objects, while Qwen uses these observations to come up with a creative, dream-like story. In the morning, the device reveals and narrates the dream using text-to-speech.
+
+We ended up choosing our third idea, AI Dream Machine, and this is our initial storyboard: 
+
+![Prototype1](prototype1.jpg)
+
 ## Prep for Part 2
 
 1. Look at and give feedback on the Part F storyboards.
