@@ -394,6 +394,20 @@ We ended up choosing our third idea, AI Dream Machine, and this is our initial s
 
 \*\*\***Post your revised storyboard here.**\*\*\*
 
+Some of the feedback we received was that it was not clear how the user would provide the Raspberry Pi with photos or what the morning interaction would look like. It was also unclear how the user would know when the device had started processing, so we were encouraged to add a physical button and clearer feedback to make the interaction more intuitive. There were also concerns about the privacy of the uploaded photos.
+
+From Part E, we learned about several technical limitations of our system. YOLO can detect people and objects, but it cannot fully understand the context or meaning behind a photo. It can also miss or incorrectly identify objects, meaning the generated dream might not accurately reflect the uploaded images. Additionally, Qwen cannot see the images directly and relies entirely on the textual descriptions produced by the interpreter. We also noticed that Qwen takes a considerable amount of time to generate a story on the Raspberry Pi.
+
+Based on this feedback and our observations, we decided to improve our design by:
+- Moving dream generation overnight, so the user doesn't have to wait for Qwen and Piper in the morning.
+- Using a single physical button to start the process before bed and reveal the dream in the morning.
+- Providing clear screen and voice feedback so users know when processing has started and when their dream is ready.
+- Improving the interpreter to include more useful details from YOLO detections, helping Qwen generate more meaningful stories.
+- Keeping all processing local on the Raspberry Pi to protect the privacy of the user's photos.
+
+Our improved storyboard taking into account the feedback can be seen below:
+
+
 ## Part G. 
 ### Design the interaction before
 
